@@ -20,6 +20,7 @@ public class Proyecto {
         // TODO code application logic here
          JOptionPane.showMessageDialog(null,"Proyecto");
          JOptionPane.showMessageDialog(null,"Proyecto1");
+        JOptionPane.showMessageDialog(null,"Proyecto3");
     }
     
 }
