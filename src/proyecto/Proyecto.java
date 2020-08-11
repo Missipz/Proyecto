@@ -22,6 +22,7 @@ public class Proyecto {
          JOptionPane.showMessageDialog(null,"Proyecto1");
         JOptionPane.showMessageDialog(null,"Proyecto3");
          JOptionPane.showMessageDialog(null,"Proyecto324");
+         JOptionPane.showMessageDialog(null,"Hola");
     }
     
 }
