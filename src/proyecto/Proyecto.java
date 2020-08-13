@@ -18,11 +18,15 @@ public class Proyecto {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-         JOptionPane.showMessageDialog(null,"Proyecto");
-         JOptionPane.showMessageDialog(null,"Proyecto1");
-        JOptionPane.showMessageDialog(null,"Proyecto3");
-         JOptionPane.showMessageDialog(null,"Proyecto324");
-         JOptionPane.showMessageDialog(null,"Hola");
+          //initComponents();
+          
+          
+          RegistroCliente  registroCliente = new RegistroCliente();
+           registroCliente.setVisible(true);
+            // registroCliente
+        
     }
+
+    
     
 }
