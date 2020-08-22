@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyecto;
+package Interfacez;
 
 import javax.swing.JOptionPane;
 
@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  *
  * @author Missi
  */
-public class Proyecto {
+public class Main {
 
     /**
      * @param args the command line arguments
@@ -21,7 +21,7 @@ public class Proyecto {
           //initComponents();
           
           
-          RegistroCliente  registroCliente = new RegistroCliente();
+          Principal  registroCliente = new Principal();
            registroCliente.setVisible(true);
             // registroCliente
         
