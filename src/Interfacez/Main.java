@@ -19,8 +19,7 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
           //initComponents();
-          
-          
+         
           Principal  registroCliente = new Principal();
            registroCliente.setVisible(true);
             // registroCliente

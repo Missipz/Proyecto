@@ -1,0 +1,3 @@
+nombre=2
+correo=2
+telefono=2
