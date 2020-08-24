@@ -98,12 +98,15 @@ String nomArchivo="";
         });
         getContentPane().add(ImputFechaTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 107, 121, -1));
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Titulo");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 87, -1, -1));
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Descripcion");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 87, -1, -1));
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Fecha");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 87, -1, -1));
 
@@ -116,6 +119,7 @@ String nomArchivo="";
         getContentPane().add(btnGuardarTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 53, 156, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Buscar");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 175, -1, -1));
 
@@ -168,6 +172,7 @@ String nomArchivo="";
         getContentPane().add(imputBuscarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(575, 173, 132, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Modulo de Trabajos");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 224, -1));
 
@@ -183,6 +188,7 @@ String nomArchivo="";
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(575, 87, 132, -1));
         getContentPane().add(imputDuracionTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(575, 107, 105, -1));
 
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Cliente:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 153, -1, -1));
 
@@ -193,6 +199,7 @@ String nomArchivo="";
         });
         getContentPane().add(imputClienteTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 173, 151, -1));
 
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Empleado a Cargo:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 153, -1, -1));
 
