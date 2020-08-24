@@ -21,7 +21,7 @@ import javax.swing.table.TableRowSorter;
  *
  * @author EstebanDC
  */
-public class Registrar extends javax.swing.JFrame {
+public class Empleados extends javax.swing.JFrame {
 int contadorCliente=0;
 int longitud =10;
 String nomArchivo="";
@@ -29,7 +29,7 @@ String nomArchivo="";
     /**
      * Creates new form Registrar
      */
-    public Registrar() {
+    public Empleados() {
         initComponents();
         CargarTable();
         
@@ -45,19 +45,19 @@ String nomArchivo="";
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ImputNombreCliente = new javax.swing.JTextField();
-        ImputCorreoCliente = new javax.swing.JTextField();
-        ImputTelefonoCliente = new javax.swing.JTextField();
+        ImputNombreEmpleado = new javax.swing.JTextField();
+        ImputCorreoEmpleado = new javax.swing.JTextField();
+        ImputTelefonoEmpleado = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        btnGuardarCliente = new javax.swing.JButton();
+        btnGuardarEmpleado = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtClientes = new javax.swing.JTable();
-        btnEliminaCliente = new javax.swing.JButton();
-        btnEditarCliente = new javax.swing.JButton();
-        imputBuscarCliente = new javax.swing.JTextField();
+        btnEliminaEmpelado = new javax.swing.JButton();
+        btnEditarEmpleado = new javax.swing.JButton();
+        imputBuscarEmpleado = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
@@ -65,31 +65,31 @@ String nomArchivo="";
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 153));
         setLocation(new java.awt.Point(400, 200));
+        setName("JframeEmpleado"); // NOI18N
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(550, 360));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ImputNombreCliente.addActionListener(new java.awt.event.ActionListener() {
+        ImputNombreEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ImputNombreClienteActionPerformed(evt);
+                ImputNombreEmpleadoActionPerformed(evt);
             }
         });
-        getContentPane().add(ImputNombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 128, 130, -1));
+        getContentPane().add(ImputNombreEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 128, 130, -1));
 
-        ImputCorreoCliente.addActionListener(new java.awt.event.ActionListener() {
+        ImputCorreoEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ImputCorreoClienteActionPerformed(evt);
+                ImputCorreoEmpleadoActionPerformed(evt);
             }
         });
-        getContentPane().add(ImputCorreoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 128, 157, -1));
+        getContentPane().add(ImputCorreoEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 128, 157, -1));
 
-        ImputTelefonoCliente.addActionListener(new java.awt.event.ActionListener() {
+        ImputTelefonoEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ImputTelefonoClienteActionPerformed(evt);
+                ImputTelefonoEmpleadoActionPerformed(evt);
             }
         });
-        getContentPane().add(ImputTelefonoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 128, 153, -1));
+        getContentPane().add(ImputTelefonoEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 128, 153, -1));
 
         jLabel1.setText("Nombre:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 108, -1, -1));
@@ -100,13 +100,13 @@ String nomArchivo="";
         jLabel4.setText("Telefono");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 108, -1, -1));
 
-        btnGuardarCliente.setText("Guardar Cliente");
-        btnGuardarCliente.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardarEmpleado.setText("Guardar Empleado");
+        btnGuardarEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarClienteActionPerformed(evt);
+                btnGuardarEmpleadoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnGuardarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 53, 128, -1));
+        getContentPane().add(btnGuardarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 53, 128, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Buscar");
@@ -132,31 +132,36 @@ String nomArchivo="";
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 195, 516, 142));
 
-        btnEliminaCliente.setText("Eliminar Cliente");
-        btnEliminaCliente.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminaEmpelado.setText("Eliminar Cliente");
+        btnEliminaEmpelado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminaClienteActionPerformed(evt);
+                btnEliminaEmpeladoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEliminaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 53, 128, -1));
+        getContentPane().add(btnEliminaEmpelado, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 53, 128, -1));
 
-        btnEditarCliente.setText("Editar Cliente");
-        btnEditarCliente.addActionListener(new java.awt.event.ActionListener() {
+        btnEditarEmpleado.setText("Editar Empleado");
+        btnEditarEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarClienteActionPerformed(evt);
+                btnEditarEmpleadoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEditarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(299, 53, 128, -1));
+        getContentPane().add(btnEditarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(299, 53, 128, -1));
 
-        imputBuscarCliente.addKeyListener(new java.awt.event.KeyAdapter() {
+        imputBuscarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                imputBuscarEmpleadoActionPerformed(evt);
+            }
+        });
+        imputBuscarEmpleado.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                imputBuscarClienteKeyTyped(evt);
+                imputBuscarEmpleadoKeyTyped(evt);
             }
         });
-        getContentPane().add(imputBuscarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 169, 153, -1));
+        getContentPane().add(imputBuscarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 169, 153, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel7.setText("REGISTRO");
+        jLabel7.setText("Modulo de Empleados");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 11, -1, -1));
 
         jButton1.setText("Salir");
@@ -175,18 +180,18 @@ String nomArchivo="";
 
     public void GuardarCliente(){
     
-          ClassClientes nuevocliente =new ClassClientes();
-          nuevocliente.setNombre(ImputNombreCliente.getText());
-        nuevocliente.setCorreo(ImputCorreoCliente.getText());
-        nuevocliente.setTelefono(ImputTelefonoCliente.getText());
-        nuevocliente.setIndice(contadorCliente);
-        if ((ImputNombreCliente.getText().length()==0)||(ImputCorreoCliente.getText().length()==0)||(ImputTelefonoCliente.getText().length()==0)){
+          ClassEmpleados nuevoEmpleado =new ClassEmpleados();
+          nuevoEmpleado.setNombre(ImputNombreEmpleado.getText());
+        nuevoEmpleado.setCorreo(ImputCorreoEmpleado.getText());
+        nuevoEmpleado.setTelefono(ImputTelefonoEmpleado.getText());
+        nuevoEmpleado.setIndice(contadorCliente);
+        if ((ImputNombreEmpleado.getText().length()==0)||(ImputCorreoEmpleado.getText().length()==0)||(ImputTelefonoEmpleado.getText().length()==0)){
             JOptionPane.showMessageDialog(null, "ERROR: EXISTEN CAMPOS VACIDOS", "ALERTA", JOptionPane.WARNING_MESSAGE);
         }else{
-            ImputNombreCliente.setText("");
-            ImputCorreoCliente.setText("");
-            ImputTelefonoCliente.setText("");
-            nuevocliente.CargarClientes(jtClientes);
+            ImputNombreEmpleado.setText("");
+            ImputCorreoEmpleado.setText("");
+            ImputTelefonoEmpleado.setText("");
+            nuevoEmpleado.CargarEmpleados(jtClientes);
             CargarTable();
         }
         
@@ -202,7 +207,7 @@ public void CargarTable(){
         contadorCliente=0;
         int num=0;
         String barra=File.separator;
-         String ubicacion=System.getProperty("user.dir")+barra+"Clientes"+barra;
+         String ubicacion=System.getProperty("user.dir")+barra+"Empleados"+barra;
         File archivo=new File(ubicacion);
         FileReader leerArchivo=null;
         File[]registro=archivo.listFiles();
@@ -245,7 +250,7 @@ public void CargarTable(){
 public  void Eliminar(String nomArchivo){
          
         String barra=File.separator;
-        String ubicacion=System.getProperty("user.dir")+barra+"Clientes"+barra;
+        String ubicacion=System.getProperty("user.dir")+barra+"Empleados"+barra;
         File archivo2=new File(ubicacion+nomArchivo+".txt");
         System.out.println(archivo2);
         if (archivo2.delete()) {
@@ -258,67 +263,71 @@ public  void Eliminar(String nomArchivo){
         
 }
     
-    private void ImputCorreoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImputCorreoClienteActionPerformed
+    private void ImputCorreoEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImputCorreoEmpleadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ImputCorreoClienteActionPerformed
+    }//GEN-LAST:event_ImputCorreoEmpleadoActionPerformed
 
-    private void ImputTelefonoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImputTelefonoClienteActionPerformed
+    private void ImputTelefonoEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImputTelefonoEmpleadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ImputTelefonoClienteActionPerformed
+    }//GEN-LAST:event_ImputTelefonoEmpleadoActionPerformed
 
-    private void ImputNombreClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImputNombreClienteActionPerformed
+    private void ImputNombreEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImputNombreEmpleadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ImputNombreClienteActionPerformed
+    }//GEN-LAST:event_ImputNombreEmpleadoActionPerformed
 
-    private void btnGuardarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarClienteActionPerformed
+    private void btnGuardarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarEmpleadoActionPerformed
         // TODO add your handling code here:
         GuardarCliente();
-    }//GEN-LAST:event_btnGuardarClienteActionPerformed
+    }//GEN-LAST:event_btnGuardarEmpleadoActionPerformed
 
-    private void btnEliminaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminaClienteActionPerformed
+    private void btnEliminaEmpeladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminaEmpeladoActionPerformed
         // TODO add your handling code here:
-        int codigo=JOptionPane.showConfirmDialog(null,"Deseas eliminar el Usuario: "+ImputNombreCliente.getText(), "Atencion", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE);
+        int codigo=JOptionPane.showConfirmDialog(null,"Deseas eliminar el Empleado: "+ImputNombreEmpleado.getText(), "Atencion", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE);
        if (codigo==JOptionPane.YES_OPTION){
             Eliminar(nomArchivo);
             //btnEliminarUsuario.setVisible(false);
         }
-    }//GEN-LAST:event_btnEliminaClienteActionPerformed
+    }//GEN-LAST:event_btnEliminaEmpeladoActionPerformed
 
     private void jtClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtClientesMouseClicked
         // TODO add your handling code here:
         DefaultTableModel model1 = (DefaultTableModel) jtClientes.getModel();
          nomArchivo = (String) model1.getValueAt(jtClientes.getSelectedRow(), 0);
-        ImputNombreCliente.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 1));
-        ImputCorreoCliente.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 2));
-        ImputTelefonoCliente.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 3));
+        ImputNombreEmpleado.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 1));
+        ImputCorreoEmpleado.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 2));
+        ImputTelefonoEmpleado.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 3));
          
        
     }//GEN-LAST:event_jtClientesMouseClicked
 
-    private void btnEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarClienteActionPerformed
+    private void btnEditarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEmpleadoActionPerformed
         // TODO add your handling code here:
         contadorCliente=Integer.parseInt(nomArchivo);  
         GuardarCliente();
-    }//GEN-LAST:event_btnEditarClienteActionPerformed
+    }//GEN-LAST:event_btnEditarEmpleadoActionPerformed
 TableRowSorter trs;
-    private void imputBuscarClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_imputBuscarClienteKeyTyped
+    private void imputBuscarEmpleadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_imputBuscarEmpleadoKeyTyped
         // TODO add your handling code here:
          DefaultTableModel model = (DefaultTableModel) jtClientes.getModel();
-        imputBuscarCliente.addKeyListener(new KeyAdapter(){
+        imputBuscarEmpleado.addKeyListener(new KeyAdapter(){
             @Override
             public void keyReleased(KeyEvent ke) {
                 super.keyReleased(ke); //To change body of generated methods, choose Tools | Templates.
-                trs.setRowFilter(RowFilter.regexFilter(imputBuscarCliente.getText(), 0));
+                trs.setRowFilter(RowFilter.regexFilter(imputBuscarEmpleado.getText(), 0));
             }
             
         });
         trs= new TableRowSorter(model);
         jtClientes.setRowSorter(trs);
-    }//GEN-LAST:event_imputBuscarClienteKeyTyped
+    }//GEN-LAST:event_imputBuscarEmpleadoKeyTyped
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void imputBuscarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imputBuscarEmpleadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_imputBuscarEmpleadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -337,32 +346,33 @@ TableRowSorter trs;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Registrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Empleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Registrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Empleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Registrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Empleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Registrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Empleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Registrar().setVisible(true);
+                new Empleados().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField ImputCorreoCliente;
-    private javax.swing.JTextField ImputNombreCliente;
-    private javax.swing.JTextField ImputTelefonoCliente;
-    private javax.swing.JButton btnEditarCliente;
-    private javax.swing.JButton btnEliminaCliente;
-    private javax.swing.JButton btnGuardarCliente;
-    private javax.swing.JTextField imputBuscarCliente;
+    private javax.swing.JTextField ImputCorreoEmpleado;
+    private javax.swing.JTextField ImputNombreEmpleado;
+    private javax.swing.JTextField ImputTelefonoEmpleado;
+    private javax.swing.JButton btnEditarEmpleado;
+    private javax.swing.JButton btnEliminaEmpelado;
+    private javax.swing.JButton btnGuardarEmpleado;
+    private javax.swing.JTextField imputBuscarEmpleado;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;

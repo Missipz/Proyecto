@@ -1,0 +1,3 @@
+nombre=Mario Lopez
+correo=mario.lopez@gmail.com
+telefono=123455667
