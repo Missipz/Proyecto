@@ -61,6 +61,7 @@ String nomArchivo="";
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 153));
@@ -103,13 +104,14 @@ String nomArchivo="";
         jLabel4.setText("Telefono");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 108, -1, -1));
 
-        btnGuardarEmpleado.setText("Guardar Empleado");
+        btnGuardarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/save_32.png"))); // NOI18N
+        btnGuardarEmpleado.setText("Guardar");
         btnGuardarEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarEmpleadoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnGuardarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 53, 128, -1));
+        getContentPane().add(btnGuardarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 150, 50));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -134,23 +136,26 @@ String nomArchivo="";
         });
         jScrollPane1.setViewportView(jtClientes);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 195, 516, 142));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 242, 570, 170));
 
-        btnEliminaEmpelado.setText("Eliminar Cliente");
+        btnEliminaEmpelado.setIcon(new javax.swing.ImageIcon("C:\\Users\\EstebanDC\\Documents\\NetBeansProjects\\Proyecto\\img\\eliminar.png")); // NOI18N
+        btnEliminaEmpelado.setText("Eliminar");
         btnEliminaEmpelado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminaEmpeladoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEliminaEmpelado, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 53, 128, -1));
+        getContentPane().add(btnEliminaEmpelado, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 150, 50));
 
-        btnEditarEmpleado.setText("Editar Empleado");
+        btnEditarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/icons8-edit-48.png"))); // NOI18N
+        btnEditarEmpleado.setText("Editar");
         btnEditarEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarEmpleadoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEditarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(299, 53, 128, -1));
+        getContentPane().add(btnEditarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 150, 50));
+        btnEditarEmpleado.getAccessibleContext().setAccessibleName("Editar");
 
         imputBuscarEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,16 +174,20 @@ String nomArchivo="";
         jLabel7.setText("Modulo de Empleados");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 11, -1, -1));
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/close.png"))); // NOI18N
         jButton1.setText("Salir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(437, 53, 92, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, 140, 50));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Missi\\Project\\Proyecto\\img\\ico.jpg")); // NOI18N
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, -3, 720, 460));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/fondo 1.jpg"))); // NOI18N
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 720, 460));
+
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -380,6 +389,7 @@ TableRowSorter trs;
     private javax.swing.JTextField imputBuscarEmpleado;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;

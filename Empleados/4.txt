@@ -1,0 +1,3 @@
+nombre=12
+correo=12
+telefono=12

@@ -45,6 +45,7 @@ String nomArchivo="";
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        label1 = new java.awt.Label();
         ImputNombreCliente = new javax.swing.JTextField();
         ImputCorreoCliente = new javax.swing.JTextField();
         ImputTelefonoCliente = new javax.swing.JTextField();
@@ -62,11 +63,12 @@ String nomArchivo="";
         jButton1 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
 
+        label1.setText("label1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 153));
         setLocation(new java.awt.Point(400, 200));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(550, 360));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -103,13 +105,14 @@ String nomArchivo="";
         jLabel4.setText("Telefono");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 108, -1, -1));
 
-        btnGuardarCliente.setText("Guardar Cliente");
+        btnGuardarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/save_32.png"))); // NOI18N
+        btnGuardarCliente.setText("Guardar");
         btnGuardarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(btnGuardarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 53, 128, -1));
+        getContentPane().add(btnGuardarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 180, 50));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -134,23 +137,25 @@ String nomArchivo="";
         });
         jScrollPane1.setViewportView(jtClientes);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 195, 516, 142));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 540, 190));
 
-        btnEliminaCliente.setText("Eliminar Cliente");
+        btnEliminaCliente.setIcon(new javax.swing.ImageIcon("C:\\Users\\EstebanDC\\Documents\\NetBeansProjects\\Proyecto\\img\\eliminar.png")); // NOI18N
+        btnEliminaCliente.setText("Eliminar");
         btnEliminaCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminaClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEliminaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 53, 128, -1));
+        getContentPane().add(btnEliminaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 190, 50));
 
-        btnEditarCliente.setText("Editar Cliente");
+        btnEditarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/icons8-edit-48.png"))); // NOI18N
+        btnEditarCliente.setText("Editar ");
         btnEditarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEditarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(299, 53, 128, -1));
+        getContentPane().add(btnEditarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 140, 50));
 
         imputBuscarCliente.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -161,19 +166,20 @@ String nomArchivo="";
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("REGISTRO");
+        jLabel7.setText("REGISTRO DE CLIENTES ");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 11, -1, -1));
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/close.png"))); // NOI18N
         jButton1.setText("Salir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(437, 53, 92, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 50, 130, 50));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Missi\\Project\\Proyecto\\img\\ico.jpg")); // NOI18N
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, -3, 720, 460));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/fondo 1.jpg"))); // NOI18N
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -377,5 +383,6 @@ TableRowSorter trs;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jtClientes;
+    private java.awt.Label label1;
     // End of variables declaration//GEN-END:variables
 }

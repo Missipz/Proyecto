@@ -27,16 +27,18 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        FONDO = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
+        FONDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/fondoazulceleste.jpg"))); // NOI18N
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
         setForeground(new java.awt.Color(0, 0, 0));
-        setMaximumSize(new java.awt.Dimension(1366, 768));
         setResizable(false);
         setSize(new java.awt.Dimension(0, 0));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -44,6 +46,7 @@ public class Menu extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Broadway", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 204, 204));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/Cliente1.png"))); // NOI18N
         jButton1.setText("Mantenimiento de Clientes");
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
@@ -52,11 +55,12 @@ public class Menu extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 21, 249, 34));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 340, 140));
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
-        jButton2.setFont(new java.awt.Font("Broadway", 1, 14)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Broadway", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 204, 204));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfacez/Empleado.png"))); // NOI18N
         jButton2.setText("Mantenimiento Empleados");
         jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
@@ -65,11 +69,12 @@ public class Menu extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(269, 21, 249, 34));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 340, 140));
 
         jButton4.setBackground(new java.awt.Color(0, 0, 0));
         jButton4.setFont(new java.awt.Font("Broadway", 1, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(0, 204, 204));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/programar.png"))); // NOI18N
         jButton4.setText("Programar Trabajo");
         jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton4.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
@@ -78,11 +83,12 @@ public class Menu extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(528, 21, 249, 34));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 150, 330, 140));
 
         jButton5.setBackground(new java.awt.Color(0, 0, 0));
         jButton5.setFont(new java.awt.Font("Broadway", 1, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(0, 204, 204));
+        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\EstebanDC\\Documents\\NetBeansProjects\\Proyecto\\img\\close.png")); // NOI18N
         jButton5.setText("Salir");
         jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton5.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
@@ -91,10 +97,10 @@ public class Menu extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(787, 21, 249, 34));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 310, 330, 140));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Missi\\Project\\Proyecto\\img\\ico.jpg")); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 770));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/fondo 1.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -160,6 +166,7 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel FONDO;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
