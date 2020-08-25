@@ -45,6 +45,11 @@ String nomArchivo="";
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        DialogEmpleado = new javax.swing.JDialog();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        TablaTemporalEmpleados = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
+        BtnAgregaEmpleado = new javax.swing.JButton();
         ImpuTituloTrabajo = new javax.swing.JTextField();
         ImputDescripcionTrabajo = new javax.swing.JTextField();
         ImputFechaTrabajo = new javax.swing.JTextField();
@@ -66,8 +71,38 @@ String nomArchivo="";
         imputClienteTrabajo = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         imputEmpleadoTrabajo = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        btnBuscaCliente = new javax.swing.JButton();
+        btnBuscaEmpleado1 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+
+        DialogEmpleado.getContentPane().setLayout(new java.awt.GridBagLayout());
+
+        TablaTemporalEmpleados.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(TablaTemporalEmpleados);
+
+        DialogEmpleado.getContentPane().add(jScrollPane2, new java.awt.GridBagConstraints());
+
+        jButton2.setText("jButton2");
+        DialogEmpleado.getContentPane().add(jButton2, new java.awt.GridBagConstraints());
+
+        BtnAgregaEmpleado.setText("Agregar");
+        BtnAgregaEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAgregaEmpleadoActionPerformed(evt);
+            }
+        });
+        DialogEmpleado.getContentPane().add(BtnAgregaEmpleado, new java.awt.GridBagConstraints());
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -122,7 +157,7 @@ String nomArchivo="";
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Buscar");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 210, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 210, -1, -1));
 
         jtClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -142,7 +177,7 @@ String nomArchivo="";
         });
         jScrollPane1.setViewportView(jtClientes);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 707, 142));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 707, 142));
 
         btnEliminartrabajo.setIcon(new javax.swing.ImageIcon("C:\\Users\\EstebanDC\\Documents\\NetBeansProjects\\Proyecto\\img\\eliminar.png")); // NOI18N
         btnEliminartrabajo.setText("Eliminar Trabajo");
@@ -172,7 +207,7 @@ String nomArchivo="";
                 imputBuscarEmpleadoKeyTyped(evt);
             }
         });
-        getContentPane().add(imputBuscarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 210, 132, -1));
+        getContentPane().add(imputBuscarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 200, 132, 30));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -201,7 +236,7 @@ String nomArchivo="";
                 imputClienteTrabajoActionPerformed(evt);
             }
         });
-        getContentPane().add(imputClienteTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 151, -1));
+        getContentPane().add(imputClienteTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 230, -1));
 
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Empleado a Cargo:");
@@ -212,13 +247,29 @@ String nomArchivo="";
                 imputEmpleadoTrabajoActionPerformed(evt);
             }
         });
-        getContentPane().add(imputEmpleadoTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 225, -1));
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/fondo 1.jpg"))); // NOI18N
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 740, 400));
+        getContentPane().add(imputEmpleadoTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, 225, -1));
 
         jLabel10.setText("jLabel10");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, -1, -1));
+
+        btnBuscaCliente.setText("Buscar Cliente");
+        btnBuscaCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscaClienteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnBuscaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 220, -1));
+
+        btnBuscaEmpleado1.setText("Buscar empleado");
+        btnBuscaEmpleado1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscaEmpleado1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnBuscaEmpleado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, 220, -1));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/fondo 1.jpg"))); // NOI18N
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -296,8 +347,43 @@ String nomArchivo="";
     }//GEN-LAST:event_imputClienteTrabajoActionPerformed
 
     private void imputEmpleadoTrabajoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imputEmpleadoTrabajoActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_imputEmpleadoTrabajoActionPerformed
+
+    private void btnBuscaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaClienteActionPerformed
+       
+        DialogEmpleado dialogEmpleado = new DialogEmpleado(this,true);
+        
+        
+        dialogEmpleado.setVisible(true);
+        
+        
+        int seleccion  = TablaTemporalEmpleados.getSelectedRow();
+        try {
+            String nombre; 
+        } catch (Exception e) {
+            if (seleccion ==-1)
+            {
+            JOptionPane.showMessageDialog(null," Debe selecionar un empleado" );
+            } else{
+            
+            
+            
+            }
+        }
+        
+        
+        
+        
+    }//GEN-LAST:event_btnBuscaClienteActionPerformed
+
+    private void BtnAgregaEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAgregaEmpleadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnAgregaEmpleadoActionPerformed
+
+    private void btnBuscaEmpleado1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaEmpleado1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuscaEmpleado1ActionPerformed
 
     public void GuardarCliente(){
     
@@ -431,9 +517,14 @@ public  void Eliminar(String nomArchivo){
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnAgregaEmpleado;
+    private javax.swing.JDialog DialogEmpleado;
     private javax.swing.JTextField ImpuTituloTrabajo;
     private javax.swing.JTextField ImputDescripcionTrabajo;
     private javax.swing.JTextField ImputFechaTrabajo;
+    private javax.swing.JTable TablaTemporalEmpleados;
+    private javax.swing.JButton btnBuscaCliente;
+    private javax.swing.JButton btnBuscaEmpleado1;
     private javax.swing.JButton btnEditarEmpleado;
     private javax.swing.JButton btnEliminartrabajo;
     private javax.swing.JButton btnGuardarTrabajo;
@@ -442,6 +533,7 @@ public  void Eliminar(String nomArchivo){
     private javax.swing.JTextField imputDuracionTrabajo;
     private javax.swing.JTextField imputEmpleadoTrabajo;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -453,6 +545,7 @@ public  void Eliminar(String nomArchivo){
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jtClientes;
     // End of variables declaration//GEN-END:variables
 }

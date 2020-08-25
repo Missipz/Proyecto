@@ -13,7 +13,8 @@ import javax.swing.JTable;
  *
  * @author Missi
  */
-public class ClassTrabajos {
+public class ClassTrabajos 
+{
      private String titulo;
      private String  descripcion;
      private String fecha;
