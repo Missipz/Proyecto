@@ -5,19 +5,79 @@
  */
 package Interfacez;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.util.Properties;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author EstebanDC
  */
+
 public class DialogEmpleado extends javax.swing.JDialog {
 
+    int contadorCliente=0;
+int longitud =10;
+String nomArchivo="";
     /**
      * Creates new form DialogEmpleado
      */
+    
     public DialogEmpleado(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        CargarTable();
     }
+    
+    
+    public void CargarTable(){
+        contadorCliente=0;
+        int num=0;
+        String barra=File.separator;
+         String ubicacion=System.getProperty("user.dir")+barra+"Empleados"+barra;
+        File archivo=new File(ubicacion);
+        FileReader leerArchivo=null;
+        File[]registro=archivo.listFiles();
+        String[]encabezado={"ID","NOMBRE","CORREO","TELEFONO"};
+            DefaultTableModel  model= new DefaultTableModel(null,encabezado);
+        for (int i=0;i<registro.length;i++){
+            File url=new File(ubicacion+registro[i].getName());
+    
+        try {
+            FileInputStream fis=new FileInputStream(url);
+            Properties mostrar =new Properties();
+            mostrar.load(fis);
+            
+            String filas[]={registro[i].getName().replace(".txt",""),
+            mostrar.getProperty("nombre"),mostrar.getProperty("correo"),
+            mostrar.getProperty("telefono")};
+            model.addRow(filas);
+            num=Integer.parseInt (registro[i].getName().replace(".txt",""));
+            fis.close();
+           
+            if(num>contadorCliente){
+             
+            contadorCliente=num;
+        }
+        } catch (Exception e) {
+            
+        }
+             
+           
+        }
+        contadorCliente=contadorCliente+1;
+        Tabla_Empleado_BUSCAR.setModel(model);
+        Tabla_Empleado_BUSCAR.removeColumn(Tabla_Empleado_BUSCAR.getColumnModel().getColumn(0));
+         
+          
+          
+        
+      
+    }
+    
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,18 +88,29 @@ public class DialogEmpleado extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        btnAgregar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabla_Empleado_BUSCAR = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/addressbook_addressbook_add_librodedireccion_2815.png"))); // NOI18N
-        jButton1.setText("Agregar");
+        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/addressbook_addressbook_add_librodedireccion_2815.png"))); // NOI18N
+        btnAgregar.setText("Agregar");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/close.png"))); // NOI18N
         jButton2.setText("Salir");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         Tabla_Empleado_BUSCAR.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -54,6 +125,10 @@ public class DialogEmpleado extends javax.swing.JDialog {
         ));
         jScrollPane1.setViewportView(Tabla_Empleado_BUSCAR);
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Seleccione un Empleado:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -62,28 +137,42 @@ public class DialogEmpleado extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(138, 138, 138)
-                        .addComponent(jButton1)
+                        .addComponent(btnAgregar)
                         .addGap(41, 41, 41)
                         .addComponent(jButton2))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(92, 92, 92)
+                        .addComponent(jLabel1)))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(27, 27, 27)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(btnAgregar)
                     .addComponent(jButton2))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        dispose(); // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+       DefaultTableModel model1 = (DefaultTableModel) Tabla_Empleado_BUSCAR.getModel();
+        nomArchivo = (String) model1.getValueAt(Tabla_Empleado_BUSCAR.getSelectedRow(), 0); // TODO add your handling code here:
+    }//GEN-LAST:event_btnAgregarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -129,8 +218,9 @@ public class DialogEmpleado extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Tabla_Empleado_BUSCAR;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnAgregar;
     private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
