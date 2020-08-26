@@ -1,6 +1,6 @@
-titulo=0
-descripcion=0
-fecha=0
-duracion=0
-cliente=0
-fecha=0
+titulo=1
+descripcion=2
+fecha=3
+duracion=4
+cliente=5
+empleado=6

@@ -186,18 +186,18 @@ String nomArchivo="";
 
     public void GuardarCliente(){
     
-          ClassClientes nuevocliente =new ClassClientes();
-          nuevocliente.setNombre(ImputNombreCliente.getText());
-        nuevocliente.setCorreo(ImputCorreoCliente.getText());
-        nuevocliente.setTelefono(ImputTelefonoCliente.getText());
-        nuevocliente.setIndice(contadorCliente);
+         ClassGuardarEmpleadosClientes cliente=new  ClassGuardarEmpleadosClientes("","","","","","","Clientes",
+                                                             ImputNombreCliente.getText(),
+                                                             ImputTelefonoCliente.getText(),
+                                                             ImputCorreoCliente.getText(),
+                                                             contadorCliente);
         if ((ImputNombreCliente.getText().length()==0)||(ImputCorreoCliente.getText().length()==0)||(ImputTelefonoCliente.getText().length()==0)){
             JOptionPane.showMessageDialog(null, "ERROR: EXISTEN CAMPOS VACIDOS", "ALERTA", JOptionPane.WARNING_MESSAGE);
         }else{
             ImputNombreCliente.setText("");
             ImputCorreoCliente.setText("");
             ImputTelefonoCliente.setText("");
-            nuevocliente.CargarClientes(jtClientes);
+            cliente.CargarEmpleados(jtClientes);
             CargarTable();
         }
         
