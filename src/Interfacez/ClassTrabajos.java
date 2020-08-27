@@ -25,6 +25,7 @@ public class ClassTrabajos
      private String barra=File.separator;
      private String ubicacion=System.getProperty("user.dir")+barra+"Trabajos"+barra;
     
+
      public  void CargarTrabajos (JTable tabla){
           
          String archivo=getIndice()+".txt";
@@ -35,7 +36,7 @@ public class ClassTrabajos
          Formatter crea =new Formatter(getUbicacion()+archivo); 
          System.out.println(crea);
          crea.format("%s\r\n%s\r\n%s\r\n%s\r\n%s\r\n%s\r\n","titulo="+this.getTitulo(),"descripcion="+this.getDescripcion(),"fecha="+this.getFecha()
-                                                           ,"duracion="+this.getDuracion(),"cliente="+this.getCliente(),"fecha="+this.getEmpleado());
+                                                           ,"duracion="+this.getDuracion(),"cliente="+this.getCliente(),"empleado="+this.getEmpleado());
          crea.close();
          } catch (Exception e) {
          }

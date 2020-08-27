@@ -1,0 +1,6 @@
+titulo=e
+descripcion=e
+fecha=e
+duracion=null
+cliente=e
+fecha=e

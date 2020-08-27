@@ -10,6 +10,8 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Properties;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
@@ -24,7 +26,10 @@ import javax.swing.table.TableRowSorter;
 public class Trabajos extends javax.swing.JFrame {
 int contadorCliente=0;
 int longitud =10;
+String Tabla;
+String fecha;
 String nomArchivo="";
+
 
     /**
      * Creates new form Registrar
@@ -32,6 +37,11 @@ String nomArchivo="";
     public Trabajos() {
         initComponents();
         CargarTable();
+        CargarFecha();
+        
+         
+        
+        
         
         
     }
@@ -67,13 +77,13 @@ String nomArchivo="";
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        imputDuracionTrabajo = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         imputClienteTrabajo = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         imputEmpleadoTrabajo = new javax.swing.JTextField();
-        btnBuscaCliente = new javax.swing.JButton();
-        btnBuscaEmpleado = new javax.swing.JButton();
+        ImputDuracionTrabajo = new javax.swing.JComboBox<>();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        TableBuscarCliente = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
 
         DialogEmpleado.getContentPane().setLayout(new java.awt.GridBagLayout());
@@ -108,7 +118,7 @@ String nomArchivo="";
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
-        setLocation(new java.awt.Point(400, 200));
+        setLocation(new java.awt.Point(270, 80));
         setName("JframeEmpleado"); // NOI18N
         setUndecorated(true);
         setResizable(false);
@@ -150,19 +160,18 @@ String nomArchivo="";
         jLabel4.setText("Fecha");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 60, -1, -1));
 
-        btnGuardarTrabajo.setIcon(new javax.swing.ImageIcon("C:\\Users\\EstebanDC\\Documents\\NetBeansProjects\\Proyecto\\img\\save_32.png")); // NOI18N
         btnGuardarTrabajo.setText("Guardar Trabajo");
         btnGuardarTrabajo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarTrabajoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnGuardarTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 170, 50));
+        getContentPane().add(btnGuardarTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 130, 50));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Buscar");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 160, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 270, -1, -1));
 
         jtClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -184,14 +193,13 @@ String nomArchivo="";
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 707, 142));
 
-        btnEliminartrabajo.setIcon(new javax.swing.ImageIcon("C:\\Users\\EstebanDC\\Documents\\NetBeansProjects\\Proyecto\\img\\eliminar.png")); // NOI18N
         btnEliminartrabajo.setText("Eliminar Trabajo");
         btnEliminartrabajo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminartrabajoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEliminartrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, 170, 50));
+        getContentPane().add(btnEliminartrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 480, 150, 50));
 
         btnEditarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/icons8-edit-48.png"))); // NOI18N
         btnEditarEmpleado.setText("Editar Trabajo");
@@ -200,7 +208,7 @@ String nomArchivo="";
                 btnEditarEmpleadoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEditarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 260, 190, 50));
+        getContentPane().add(btnEditarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 480, 160, 50));
 
         imputBuscarEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -212,7 +220,7 @@ String nomArchivo="";
                 imputBuscarEmpleadoKeyTyped(evt);
             }
         });
-        getContentPane().add(imputBuscarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 200, 180, 30));
+        getContentPane().add(imputBuscarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 290, 180, 30));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -232,55 +240,137 @@ String nomArchivo="";
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Duracion:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 60, 132, -1));
-        getContentPane().add(imputDuracionTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 80, 105, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Cliente:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
+        imputClienteTrabajo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imputClienteTrabajoMouseClicked(evt);
+            }
+        });
         imputClienteTrabajo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 imputClienteTrabajoActionPerformed(evt);
             }
         });
-        getContentPane().add(imputClienteTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 230, 30));
+        imputClienteTrabajo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                imputClienteTrabajoKeyTyped(evt);
+            }
+        });
+        getContentPane().add(imputClienteTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 230, 30));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Empleado a Cargo:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, -1, -1));
 
+        imputEmpleadoTrabajo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imputEmpleadoTrabajoMouseClicked(evt);
+            }
+        });
         imputEmpleadoTrabajo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 imputEmpleadoTrabajoActionPerformed(evt);
             }
         });
-        getContentPane().add(imputEmpleadoTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 225, 30));
-
-        btnBuscaCliente.setText("Buscar Cliente");
-        btnBuscaCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscaClienteActionPerformed(evt);
+        imputEmpleadoTrabajo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                imputEmpleadoTrabajoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                imputEmpleadoTrabajoKeyTyped(evt);
             }
         });
-        getContentPane().add(btnBuscaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 130, -1));
+        getContentPane().add(imputEmpleadoTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 225, 30));
 
-        btnBuscaEmpleado.setText("Buscar empleado");
-        btnBuscaEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscaEmpleadoActionPerformed(evt);
+        ImputDuracionTrabajo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4\t", "5\t", "6\t", "7\t", "8\t", "9\t", "10", "11\t", "12\t", "13\t", "14\t", "15\t", "16\t", "17\t", "18\t", "19\t", "20", "21\t", "22\t", "23\t", "24\t", "25\t", "26\t", "27\t", "28\t", "29\t", "30", "31\t", "32\t", "33\t", "34\t", "35\t", "36\t", "37\t", "38\t", "39\t", "40", "41\t", "42\t", "43\t", "44\t", "45\t", "46\t", "47\t", "48\t", "49\t", "50", "51\t", "52\t", "53\t", "54\t", "55\t", "56\t", "57\t", "58\t", "59\t", "60", "61\t", "62\t", "63\t", "64\t", "65\t", "66\t", "67\t", "68\t", "69\t", "70", "71\t", "72\t", "73\t", "74\t", "75\t", "76\t", "77\t", "78\t", "79\t", "80", "81\t", "82\t", "83\t", "84", "85\t", "86\t", "87\t", "88\t", "89", "90", " " }));
+        ImputDuracionTrabajo.setName("ImputDuracionTrabajo"); // NOI18N
+        getContentPane().add(ImputDuracionTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 80, 80, -1));
+
+        TableBuscarCliente.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        TableBuscarCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableBuscarClienteMouseClicked(evt);
             }
         });
-        getContentPane().add(btnBuscaEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 140, -1));
+        jScrollPane3.setViewportView(TableBuscarCliente);
+
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 480, 60));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/fondo 1.jpg"))); // NOI18N
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, -1));
+        jLabel9.setPreferredSize(new java.awt.Dimension(790, 550));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 790, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+public void CargarClientes(){
+        contadorCliente=0;
+        int num=0;
+        String barra=File.separator;
+         String ubicacion=System.getProperty("user.dir")+barra+Tabla+barra;
+        File archivo=new File(ubicacion);
+        FileReader leerArchivo=null;
+        File[]registro=archivo.listFiles();
+        String[]encabezado={"ID","NOMBRE","CORREO","TELEFONO"};
+        
+            DefaultTableModel  model= new DefaultTableModel(null,encabezado);
+        for (int i=0;i<registro.length;i++){
+            File url=new File(ubicacion+registro[i].getName());
+    
+        try {
+            FileInputStream fis=new FileInputStream(url);
+            Properties mostrar =new Properties();
+            mostrar.load(fis);
+            
+            String filas[]={registro[i].getName().replace(".txt",""),
+            mostrar.getProperty("nombre"),mostrar.getProperty("correo"),
+            mostrar.getProperty("telefono")};
+            model.addRow(filas);
+            num=Integer.parseInt (registro[i].getName().replace(".txt",""));
+            fis.close();
+           
+            if(num>contadorCliente){
+             
+            contadorCliente=num;
+        }
+        } catch (Exception e) {
+            
+        }
+             
+           
+        }
+        
+        TableBuscarCliente.setModel(model);
+        TableBuscarCliente.removeColumn(TableBuscarCliente.getColumnModel().getColumn(0));
+        TableBuscarCliente.removeColumn(TableBuscarCliente.getColumnModel().getColumn(2));
+          
+          
+        
+      
+    }
+    public Date  CargarFecha(){
+     Date  objDate = new Date();
+    String strDateFormat = "dd-MMM-yyyy  hh: mm: ss a";  
+    SimpleDateFormat objSDF = new SimpleDateFormat(strDateFormat);
+    ImputFechaTrabajo.setText(objSDF.format(objDate));
+    return objDate;
+}
     private void jtClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtClientesMouseClicked
         // TODO add your handling code here:
         DefaultTableModel model1 = (DefaultTableModel) jtClientes.getModel();
@@ -288,7 +378,7 @@ String nomArchivo="";
         ImpuTituloTrabajo.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 1));
         ImputDescripcionTrabajo.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 2));
         ImputFechaTrabajo.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 3));
-        imputDuracionTrabajo.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 4));
+        ImputDuracionTrabajo.setSelectedItem((String) model1.getValueAt(jtClientes.getSelectedRow(), 4));
         imputClienteTrabajo.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 5));
         imputEmpleadoTrabajo.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 6));
 
@@ -303,23 +393,9 @@ String nomArchivo="";
         dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void ImputFechaTrabajoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImputFechaTrabajoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ImputFechaTrabajoActionPerformed
-
     private void imputBuscarEmpleadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_imputBuscarEmpleadoKeyTyped
         // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel) jtClientes.getModel();
-        imputBuscarEmpleado.addKeyListener(new KeyAdapter(){
-            @Override
-            public void keyReleased(KeyEvent ke) {
-                super.keyReleased(ke); //To change body of generated methods, choose Tools | Templates.
-                trs.setRowFilter(RowFilter.regexFilter(imputBuscarEmpleado.getText(), 0));
-            }
-
-        });
-        trs= new TableRowSorter(model);
-        jtClientes.setRowSorter(trs);
+       
     }//GEN-LAST:event_imputBuscarEmpleadoKeyTyped
 
     private void imputBuscarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imputBuscarEmpleadoActionPerformed
@@ -357,59 +433,50 @@ String nomArchivo="";
        
     }//GEN-LAST:event_imputEmpleadoTrabajoActionPerformed
 
-    private void btnBuscaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaClienteActionPerformed
-       
-        DialogCliente dialogCliente= new DialogCliente(this,true);
-        
-        
-        dialogCliente.setVisible(true);
-        
-        
-        int seleccion  = TablaTemporalEmpleados.getSelectedRow();
-        try {
-            String nombre; 
-        } catch (Exception e) {
-            if (seleccion ==-1)
-            {
-            JOptionPane.showMessageDialog(null," Debe selecionar un empleado" );
-            } else{
-            
-            
-            
-            }
-        }
-        
-        
-        
-        
-    }//GEN-LAST:event_btnBuscaClienteActionPerformed
-
     private void BtnAgregaEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAgregaEmpleadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnAgregaEmpleadoActionPerformed
 
-    private void btnBuscaEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaEmpleadoActionPerformed
-        DialogEmpleado dialogEmpleado = new DialogEmpleado(this,true);
-        
-        
-        dialogEmpleado.setVisible(true);
-        
-        
-        int seleccion  = TablaTemporalEmpleados.getSelectedRow();
-        try {
-            String nombre; 
-        } catch (Exception e) {
-            if (seleccion ==-1)
-            {
-            JOptionPane.showMessageDialog(null," Debe selecionar un empleado" );
-            } else{
-            
-            
-            
-            }
+    private void ImputFechaTrabajoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImputFechaTrabajoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ImputFechaTrabajoActionPerformed
+
+    private void imputClienteTrabajoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_imputClienteTrabajoKeyTyped
+ 
+       
+    }//GEN-LAST:event_imputClienteTrabajoKeyTyped
+
+    private void TableBuscarClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableBuscarClienteMouseClicked
+        DefaultTableModel model1 = (DefaultTableModel) TableBuscarCliente.getModel();
+        if (Tabla=="Clientes"){
+           imputClienteTrabajo.setText((String) model1.getValueAt(TableBuscarCliente.getSelectedRow(), 1)); 
+        }else{
+            imputEmpleadoTrabajo.setText((String) model1.getValueAt(TableBuscarCliente.getSelectedRow(), 1)); 
         }
         
-    }//GEN-LAST:event_btnBuscaEmpleadoActionPerformed
+                // TODO add your handling code here:
+                
+                
+    }//GEN-LAST:event_TableBuscarClienteMouseClicked
+
+    private void imputEmpleadoTrabajoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_imputEmpleadoTrabajoKeyTyped
+        
+               // TODO add your handling code here:
+    }//GEN-LAST:event_imputEmpleadoTrabajoKeyTyped
+
+    private void imputEmpleadoTrabajoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_imputEmpleadoTrabajoKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_imputEmpleadoTrabajoKeyPressed
+
+    private void imputEmpleadoTrabajoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imputEmpleadoTrabajoMouseClicked
+Tabla="Empleados";
+        CargarClientes();        // TODO add your handling code here:
+    }//GEN-LAST:event_imputEmpleadoTrabajoMouseClicked
+
+    private void imputClienteTrabajoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imputClienteTrabajoMouseClicked
+Tabla="Clientes";
+        CargarClientes();        // TODO add your handling code here:
+    }//GEN-LAST:event_imputClienteTrabajoMouseClicked
 
     public void GuardarCliente(){
     
@@ -417,18 +484,18 @@ String nomArchivo="";
           nuevotrabajo.setTitulo(ImpuTituloTrabajo.getText());
         nuevotrabajo.setDescripcion(ImputDescripcionTrabajo.getText());
         nuevotrabajo.setFecha(ImputFechaTrabajo.getText());
-        nuevotrabajo.setDuracion(imputDuracionTrabajo.getText());
+        nuevotrabajo.setDuracion(String.valueOf(ImputDuracionTrabajo.getSelectedItem()));
         nuevotrabajo.setCliente(imputClienteTrabajo.getText());
         nuevotrabajo.setEmpleado(imputEmpleadoTrabajo.getText());
         nuevotrabajo.setIndice(contadorCliente);
+   
         if ((ImpuTituloTrabajo.getText().length()==0)||(ImputDescripcionTrabajo.getText().length()==0)||(ImputFechaTrabajo.getText().length()==0)
-                ||(imputDuracionTrabajo.getText().length()==0)||(imputClienteTrabajo.getText().length()==0)||(imputEmpleadoTrabajo.getText().length()==0)){
+                ||(imputClienteTrabajo.getText().length()==0)||(imputEmpleadoTrabajo.getText().length()==0)){
             JOptionPane.showMessageDialog(null, "ERROR: EXISTEN CAMPOS VACIDOS", "ALERTA", JOptionPane.WARNING_MESSAGE);
         }else{
             ImpuTituloTrabajo.setText("");
             ImputDescripcionTrabajo.setText("");
-            ImputFechaTrabajo.setText("");
-            imputDuracionTrabajo.setText("");
+            ImputDuracionTrabajo.setSelectedItem("1");  
             imputClienteTrabajo.setText("");
             imputEmpleadoTrabajo.setText("");
             nuevotrabajo.CargarTrabajos(jtClientes);
@@ -508,6 +575,7 @@ public  void Eliminar(String nomArchivo){
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -530,6 +598,7 @@ public  void Eliminar(String nomArchivo){
             java.util.logging.Logger.getLogger(Trabajos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -538,6 +607,7 @@ public  void Eliminar(String nomArchivo){
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Trabajos().setVisible(true);
+                
             }
         });
     }
@@ -547,16 +617,15 @@ public  void Eliminar(String nomArchivo){
     private javax.swing.JDialog DialogEmpleado;
     private javax.swing.JTextField ImpuTituloTrabajo;
     private javax.swing.JTextField ImputDescripcionTrabajo;
+    private javax.swing.JComboBox<String> ImputDuracionTrabajo;
     private javax.swing.JTextField ImputFechaTrabajo;
     private javax.swing.JTable TablaTemporalEmpleados;
-    private javax.swing.JButton btnBuscaCliente;
-    private javax.swing.JButton btnBuscaEmpleado;
+    private javax.swing.JTable TableBuscarCliente;
     private javax.swing.JButton btnEditarEmpleado;
     private javax.swing.JButton btnEliminartrabajo;
     private javax.swing.JButton btnGuardarTrabajo;
     private javax.swing.JTextField imputBuscarEmpleado;
     private javax.swing.JTextField imputClienteTrabajo;
-    private javax.swing.JTextField imputDuracionTrabajo;
     private javax.swing.JTextField imputEmpleadoTrabajo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -571,6 +640,7 @@ public  void Eliminar(String nomArchivo){
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jtClientes;
     private java.awt.PopupMenu popupMenu1;
     // End of variables declaration//GEN-END:variables
