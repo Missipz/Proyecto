@@ -16,15 +16,15 @@ import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
-
 /**
  *
  * @author EstebanDC
  */
 public class Empleados extends javax.swing.JFrame {
-int contadorCliente=0;
-int longitud =10;
-String nomArchivo="";
+
+    int contadorCliente = 0;
+    int longitud = 10;
+    String nomArchivo = "";
 
     /**
      * Creates new form Registrar
@@ -32,8 +32,7 @@ String nomArchivo="";
     public Empleados() {
         initComponents();
         CargarTable();
-        
-        
+
     }
 
     /**
@@ -194,91 +193,86 @@ String nomArchivo="";
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void GuardarCliente(){
-    
-          ClassGuardarEmpleadosClientes empleado=new  ClassGuardarEmpleadosClientes("","","","","","","Empleados",
-                                                             ImputNombreEmpleado.getText(),
-                                                             ImputTelefonoEmpleado.getText(),
-                                                             ImputCorreoEmpleado.getText(),
-                                                             contadorCliente);
-        if ((ImputNombreEmpleado.getText().length()==0)||(ImputCorreoEmpleado.getText().length()==0)||(ImputTelefonoEmpleado.getText().length()==0)){
+    public void GuardarCliente() {
+
+        ClassGuardarEmpleadosClientes empleado = new ClassGuardarEmpleadosClientes("", "", "", "", "", "", "Empleados",
+                ImputNombreEmpleado.getText(),
+                ImputTelefonoEmpleado.getText(),
+                ImputCorreoEmpleado.getText(),
+                contadorCliente);
+        if ((ImputNombreEmpleado.getText().length() == 0) || (ImputCorreoEmpleado.getText().length() == 0) || (ImputTelefonoEmpleado.getText().length() == 0)) {
             JOptionPane.showMessageDialog(null, "ERROR: EXISTEN CAMPOS VACIDOS", "ALERTA", JOptionPane.WARNING_MESSAGE);
-        }else{
+        } else {
             ImputNombreEmpleado.setText("");
             ImputCorreoEmpleado.setText("");
             ImputTelefonoEmpleado.setText("");
             empleado.CargarEmpleados(jtClientes);
             CargarTable();
         }
-        
-      
-            if (contadorCliente<10) {
-                longitud=contadorCliente;  
+
+        if (contadorCliente < 10) {
+            longitud = contadorCliente;
         }
-      contadorCliente++;
-     // OcultaObjetos();
-}
-    
-public void CargarTable(){
-        contadorCliente=0;
-        int num=0;
-        String barra=File.separator;
-         String ubicacion=System.getProperty("user.dir")+barra+"Empleados"+barra;
-        File archivo=new File(ubicacion);
-        FileReader leerArchivo=null;
-        File[]registro=archivo.listFiles();
-        String[]encabezado={"ID","NOMBRE","CORREO","TELEFONO"};
-            DefaultTableModel  model= new DefaultTableModel(null,encabezado);
-        for (int i=0;i<registro.length;i++){
-            File url=new File(ubicacion+registro[i].getName());
-    
-        try {
-            FileInputStream fis=new FileInputStream(url);
-            Properties mostrar =new Properties();
-            mostrar.load(fis);
-            
-            String filas[]={registro[i].getName().replace(".txt",""),
-            mostrar.getProperty("nombre"),mostrar.getProperty("correo"),
-            mostrar.getProperty("telefono")};
-            model.addRow(filas);
-            num=Integer.parseInt (registro[i].getName().replace(".txt",""));
-            fis.close();
-           
-            if(num>contadorCliente){
-             
-            contadorCliente=num;
+        contadorCliente++;
+        // OcultaObjetos();
+    }
+
+    public void CargarTable() {
+        contadorCliente = 0;
+        int num = 0;
+        String barra = File.separator;
+        String ubicacion = System.getProperty("user.dir") + barra + "Empleados" + barra;
+        File archivo = new File(ubicacion);
+        FileReader leerArchivo = null;
+        File[] registro = archivo.listFiles();
+        String[] encabezado = {"ID", "NOMBRE", "CORREO", "TELEFONO"};
+        DefaultTableModel model = new DefaultTableModel(null, encabezado);
+        for (int i = 0; i < registro.length; i++) {
+            File url = new File(ubicacion + registro[i].getName());
+
+            try {
+                FileInputStream fis = new FileInputStream(url);
+                Properties mostrar = new Properties();
+                mostrar.load(fis);
+
+                String filas[] = {registro[i].getName().replace(".txt", ""),
+                    mostrar.getProperty("nombre"), mostrar.getProperty("correo"),
+                    mostrar.getProperty("telefono")};
+                model.addRow(filas);
+                num = Integer.parseInt(registro[i].getName().replace(".txt", ""));
+                fis.close();
+
+                if (num > contadorCliente) {
+
+                    contadorCliente = num;
+                }
+            } catch (Exception e) {
+
+            }
+
         }
-        } catch (Exception e) {
-            
-        }
-             
-           
-        }
-        contadorCliente=contadorCliente+1;
+        contadorCliente = contadorCliente + 1;
         jtClientes.setModel(model);
         jtClientes.removeColumn(jtClientes.getColumnModel().getColumn(0));
-         
-          
-          
-        
-      
+
     }
-public  void Eliminar(String nomArchivo){
-         
-        String barra=File.separator;
-        String ubicacion=System.getProperty("user.dir")+barra+"Empleados"+barra;
-        File archivo2=new File(ubicacion+nomArchivo+".txt");
+
+    public void Eliminar(String nomArchivo) {
+
+        String barra = File.separator;
+        String ubicacion = System.getProperty("user.dir") + barra + "Empleados" + barra;
+        File archivo2 = new File(ubicacion + nomArchivo + ".txt");
         System.out.println(archivo2);
         if (archivo2.delete()) {
             JOptionPane.showMessageDialog(null, "El archivo se borro correctamente");
-        }else{
-          JOptionPane.showMessageDialog(null, "El archivo no se a eliminado"); 
+        } else {
+            JOptionPane.showMessageDialog(null, "El archivo no se a eliminado");
         }
         CargarTable();
         //LimpiarEntradas();
-        
-}
-    
+
+    }
+
     private void ImputCorreoEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImputCorreoEmpleadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ImputCorreoEmpleadoActionPerformed
@@ -298,8 +292,8 @@ public  void Eliminar(String nomArchivo){
 
     private void btnEliminaEmpeladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminaEmpeladoActionPerformed
         // TODO add your handling code here:
-        int codigo=JOptionPane.showConfirmDialog(null,"Deseas eliminar el Empleado: "+ImputNombreEmpleado.getText(), "Atencion", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE);
-       if (codigo==JOptionPane.YES_OPTION){
+        int codigo = JOptionPane.showConfirmDialog(null, "Deseas eliminar el Empleado: " + ImputNombreEmpleado.getText(), "Atencion", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE);
+        if (codigo == JOptionPane.YES_OPTION) {
             Eliminar(nomArchivo);
             //btnEliminarUsuario.setVisible(false);
         }
@@ -308,37 +302,37 @@ public  void Eliminar(String nomArchivo){
     private void jtClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtClientesMouseClicked
         // TODO add your handling code here:
         DefaultTableModel model1 = (DefaultTableModel) jtClientes.getModel();
-         nomArchivo = (String) model1.getValueAt(jtClientes.getSelectedRow(), 0);
+        nomArchivo = (String) model1.getValueAt(jtClientes.getSelectedRow(), 0);
         ImputNombreEmpleado.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 1));
         ImputCorreoEmpleado.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 2));
         ImputTelefonoEmpleado.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 3));
-         
-       
+
+
     }//GEN-LAST:event_jtClientesMouseClicked
 
     private void btnEditarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEmpleadoActionPerformed
         // TODO add your handling code here:
-        contadorCliente=Integer.parseInt(nomArchivo);  
+        contadorCliente = Integer.parseInt(nomArchivo);
         GuardarCliente();
     }//GEN-LAST:event_btnEditarEmpleadoActionPerformed
-TableRowSorter trs;
+    TableRowSorter trs;
     private void imputBuscarEmpleadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_imputBuscarEmpleadoKeyTyped
         // TODO add your handling code here:
-         DefaultTableModel model = (DefaultTableModel) jtClientes.getModel();
-        imputBuscarEmpleado.addKeyListener(new KeyAdapter(){
+        DefaultTableModel model = (DefaultTableModel) jtClientes.getModel();
+        imputBuscarEmpleado.addKeyListener(new KeyAdapter() {
             @Override
             public void keyReleased(KeyEvent ke) {
                 super.keyReleased(ke); //To change body of generated methods, choose Tools | Templates.
                 trs.setRowFilter(RowFilter.regexFilter(imputBuscarEmpleado.getText(), 0));
             }
-            
+
         });
-        trs= new TableRowSorter(model);
+        trs = new TableRowSorter(model);
         jtClientes.setRowSorter(trs);
     }//GEN-LAST:event_imputBuscarEmpleadoKeyTyped
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    dispose();        // TODO add your handling code here:
+        dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void imputBuscarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imputBuscarEmpleadoActionPerformed

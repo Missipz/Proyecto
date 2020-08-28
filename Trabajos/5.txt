@@ -1,0 +1,6 @@
+titulo=Trabajo1x
+descripcion=Trabajo1 descripx
+fecha=27-08-1984
+duracion=1
+cliente=Heilyn
+empleado=Gerardo

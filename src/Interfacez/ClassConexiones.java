@@ -12,17 +12,18 @@ import java.io.File;
  * @author Missi
  */
 public class ClassConexiones {
-   private String titulo;
-     private String  descripcion;
-     private String fecha;
-     private String duracion;
-     private String cliente;
-     private String empleado;
-      private String nombre;
-     private String  telefono;
-     private String correo;
-     private int indice;
-     private String barra=File.separator; 
+
+    private String titulo;
+    private String descripcion;
+    private String fecha;
+    private String duracion;
+    private String cliente;
+    private String empleado;
+    private String nombre;
+    private String telefono;
+    private String correo;
+    private int indice;
+    private String barra = File.separator;
 
     public ClassConexiones(String titulo, String descripcion, String fecha, String duracion, String cliente, String empleado, String nombre, String telefono, String correo, int indice) {
         this.titulo = titulo;
@@ -80,7 +81,5 @@ public class ClassConexiones {
     public String getBarra() {
         return barra;
     }
-    
-    
-     
+
 }

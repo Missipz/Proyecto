@@ -18,18 +18,17 @@ import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
-
 /**
  *
  * @author EstebanDC
  */
 public class Trabajos extends javax.swing.JFrame {
-int contadorCliente=0;
-int longitud =10;
-String Tabla;
-String fecha;
-String nomArchivo="";
 
+    int contadorCliente = 0;
+    int longitud = 10;
+    String Tabla;
+    String fecha;
+    String nomArchivo = "";
 
     /**
      * Creates new form Registrar
@@ -38,12 +37,7 @@ String nomArchivo="";
         initComponents();
         CargarTable();
         CargarFecha();
-        
-         
-        
-        
-        
-        
+
     }
 
     /**
@@ -84,6 +78,7 @@ String nomArchivo="";
         ImputDuracionTrabajo = new javax.swing.JComboBox<>();
         jScrollPane3 = new javax.swing.JScrollPane();
         TableBuscarCliente = new javax.swing.JTable();
+        jDPFecha = new org.jdesktop.swingx.JXDatePicker();
         jLabel9 = new javax.swing.JLabel();
 
         DialogEmpleado.getContentPane().setLayout(new java.awt.GridBagLayout());
@@ -313,6 +308,7 @@ String nomArchivo="";
         jScrollPane3.setViewportView(TableBuscarCliente);
 
         getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 480, 60));
+        getContentPane().add(jDPFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 50, 120, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/fondo 1.jpg"))); // NOI18N
@@ -321,65 +317,68 @@ String nomArchivo="";
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-public void CargarClientes(){
-        contadorCliente=0;
-        int num=0;
-        String barra=File.separator;
-         String ubicacion=System.getProperty("user.dir")+barra+Tabla+barra;
-        File archivo=new File(ubicacion);
-        FileReader leerArchivo=null;
-        File[]registro=archivo.listFiles();
-        String[]encabezado={"ID","NOMBRE","CORREO","TELEFONO"};
-        
-            DefaultTableModel  model= new DefaultTableModel(null,encabezado);
-        for (int i=0;i<registro.length;i++){
-            File url=new File(ubicacion+registro[i].getName());
-    
-        try {
-            FileInputStream fis=new FileInputStream(url);
-            Properties mostrar =new Properties();
-            mostrar.load(fis);
-            
-            String filas[]={registro[i].getName().replace(".txt",""),
-            mostrar.getProperty("nombre"),mostrar.getProperty("correo"),
-            mostrar.getProperty("telefono")};
-            model.addRow(filas);
-            num=Integer.parseInt (registro[i].getName().replace(".txt",""));
-            fis.close();
-           
-            if(num>contadorCliente){
-             
-            contadorCliente=num;
+public void CargarClientes() {
+        contadorCliente = 0;
+        int num = 0;
+        String barra = File.separator;
+        String ubicacion = System.getProperty("user.dir") + barra + Tabla + barra;
+        File archivo = new File(ubicacion);
+        FileReader leerArchivo = null;
+        File[] registro = archivo.listFiles();
+        String[] encabezado = {"ID", "NOMBRE", "CORREO", "TELEFONO"};
+
+        DefaultTableModel model = new DefaultTableModel(null, encabezado);
+        for (int i = 0; i < registro.length; i++) {
+            File url = new File(ubicacion + registro[i].getName());
+
+            try {
+                FileInputStream fis = new FileInputStream(url);
+                Properties mostrar = new Properties();
+                mostrar.load(fis);
+
+                String filas[] = {registro[i].getName().replace(".txt", ""),
+                    mostrar.getProperty("nombre"), mostrar.getProperty("correo"),
+                    mostrar.getProperty("telefono")};
+                model.addRow(filas);
+                num = Integer.parseInt(registro[i].getName().replace(".txt", ""));
+                fis.close();
+
+                if (num > contadorCliente) {
+
+                    contadorCliente = num;
+                }
+            } catch (Exception e) {
+
+            }
+
         }
-        } catch (Exception e) {
-            
-        }
-             
-           
-        }
-        
+
         TableBuscarCliente.setModel(model);
         TableBuscarCliente.removeColumn(TableBuscarCliente.getColumnModel().getColumn(0));
         TableBuscarCliente.removeColumn(TableBuscarCliente.getColumnModel().getColumn(2));
-          
-          
-        
-      
+
     }
-    public Date  CargarFecha(){
-     Date  objDate = new Date();
-    String strDateFormat = "dd-MMM-yyyy  hh: mm: ss a";  
-    SimpleDateFormat objSDF = new SimpleDateFormat(strDateFormat);
-    ImputFechaTrabajo.setText(objSDF.format(objDate));
-    return objDate;
-}
+
+    public Date CargarFecha() {
+        Date objDate = new Date();
+        String strDateFormat = "dd-MMM-yyyy  hh: mm: ss a";
+        SimpleDateFormat objSDF = new SimpleDateFormat(strDateFormat);
+        ImputFechaTrabajo.setText(objSDF.format(objDate));
+        /*Inicio cambio kris*/
+        //jDPFecha.setDate(objDate);
+        /*Fin cambio kris*/
+        return objDate;
+    }
     private void jtClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtClientesMouseClicked
         // TODO add your handling code here:
         DefaultTableModel model1 = (DefaultTableModel) jtClientes.getModel();
         nomArchivo = (String) model1.getValueAt(jtClientes.getSelectedRow(), 0);
         ImpuTituloTrabajo.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 1));
-        ImputDescripcionTrabajo.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 2));
+        ImputDescripcionTrabajo.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 2));        
         ImputFechaTrabajo.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 3));
+        /*Inicio cambio kris*/
+        //jDPFecha.setDate((Date) model1.getValueAt(jtClientes.getSelectedRow(), 3));
+        /*Fin cambio kris*/
         ImputDuracionTrabajo.setSelectedItem((String) model1.getValueAt(jtClientes.getSelectedRow(), 4));
         imputClienteTrabajo.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 5));
         imputEmpleadoTrabajo.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 6));
@@ -397,7 +396,7 @@ public void CargarClientes(){
 
     private void imputBuscarEmpleadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_imputBuscarEmpleadoKeyTyped
         // TODO add your handling code here:
-       
+
     }//GEN-LAST:event_imputBuscarEmpleadoKeyTyped
 
     private void imputBuscarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imputBuscarEmpleadoActionPerformed
@@ -410,7 +409,7 @@ public void CargarClientes(){
 
     private void btnEditarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEmpleadoActionPerformed
         // TODO add your handling code here:
-        contadorCliente=Integer.parseInt(nomArchivo);
+        contadorCliente = Integer.parseInt(nomArchivo);
         GuardarCliente();
     }//GEN-LAST:event_btnEditarEmpleadoActionPerformed
 
@@ -420,8 +419,8 @@ public void CargarClientes(){
 
     private void btnEliminartrabajoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminartrabajoActionPerformed
         // TODO add your handling code here:
-        int codigo=JOptionPane.showConfirmDialog(null,"Deseas eliminar el Empleado: "+ImpuTituloTrabajo.getText(), "Atencion", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE);
-        if (codigo==JOptionPane.YES_OPTION){
+        int codigo = JOptionPane.showConfirmDialog(null, "Deseas eliminar el Empleado: " + ImpuTituloTrabajo.getText(), "Atencion", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE);
+        if (codigo == JOptionPane.YES_OPTION) {
             Eliminar(nomArchivo);
             //btnEliminarUsuario.setVisible(false);
         }
@@ -432,7 +431,7 @@ public void CargarClientes(){
     }//GEN-LAST:event_imputClienteTrabajoActionPerformed
 
     private void imputEmpleadoTrabajoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imputEmpleadoTrabajoActionPerformed
-       
+
     }//GEN-LAST:event_imputEmpleadoTrabajoActionPerformed
 
     private void BtnAgregaEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAgregaEmpleadoActionPerformed
@@ -444,26 +443,25 @@ public void CargarClientes(){
     }//GEN-LAST:event_ImputFechaTrabajoActionPerformed
 
     private void imputClienteTrabajoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_imputClienteTrabajoKeyTyped
- 
-       
+
+
     }//GEN-LAST:event_imputClienteTrabajoKeyTyped
 
     private void TableBuscarClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableBuscarClienteMouseClicked
         DefaultTableModel model1 = (DefaultTableModel) TableBuscarCliente.getModel();
-        if (Tabla=="Clientes"){
-           imputClienteTrabajo.setText((String) model1.getValueAt(TableBuscarCliente.getSelectedRow(), 1)); 
-        }else{
-            imputEmpleadoTrabajo.setText((String) model1.getValueAt(TableBuscarCliente.getSelectedRow(), 1)); 
+        if (Tabla == "Clientes") {
+            imputClienteTrabajo.setText((String) model1.getValueAt(TableBuscarCliente.getSelectedRow(), 1));
+        } else {
+            imputEmpleadoTrabajo.setText((String) model1.getValueAt(TableBuscarCliente.getSelectedRow(), 1));
         }
-        
-                // TODO add your handling code here:
-                
-                
+
+        // TODO add your handling code here:
+
     }//GEN-LAST:event_TableBuscarClienteMouseClicked
 
     private void imputEmpleadoTrabajoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_imputEmpleadoTrabajoKeyTyped
-        
-               // TODO add your handling code here:
+
+        // TODO add your handling code here:
     }//GEN-LAST:event_imputEmpleadoTrabajoKeyTyped
 
     private void imputEmpleadoTrabajoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_imputEmpleadoTrabajoKeyPressed
@@ -471,113 +469,112 @@ public void CargarClientes(){
     }//GEN-LAST:event_imputEmpleadoTrabajoKeyPressed
 
     private void imputEmpleadoTrabajoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imputEmpleadoTrabajoMouseClicked
-Tabla="Empleados";
+        Tabla = "Empleados";
         CargarClientes();        // TODO add your handling code here:
     }//GEN-LAST:event_imputEmpleadoTrabajoMouseClicked
 
     private void imputClienteTrabajoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imputClienteTrabajoMouseClicked
-Tabla="Clientes";
+        Tabla = "Clientes";
         CargarClientes();        // TODO add your handling code here:
     }//GEN-LAST:event_imputClienteTrabajoMouseClicked
 
-    public void GuardarCliente(){
-    
-          ClassTrabajos nuevotrabajo =new ClassTrabajos();
-          nuevotrabajo.setTitulo(ImpuTituloTrabajo.getText());
+    public void GuardarCliente() {
+
+        ClassTrabajos nuevotrabajo = new ClassTrabajos();
+        nuevotrabajo.setTitulo(ImpuTituloTrabajo.getText());
         nuevotrabajo.setDescripcion(ImputDescripcionTrabajo.getText());
         nuevotrabajo.setFecha(ImputFechaTrabajo.getText());
+        /* Inicio cambio kris*/
+        //nuevotrabajo.setFecha(jDPFecha.getDate().toString());
+        /* Fin cambio kris */
         nuevotrabajo.setDuracion(String.valueOf(ImputDuracionTrabajo.getSelectedItem()));
         nuevotrabajo.setCliente(imputClienteTrabajo.getText());
         nuevotrabajo.setEmpleado(imputEmpleadoTrabajo.getText());
         nuevotrabajo.setIndice(contadorCliente);
-   
-        if ((ImpuTituloTrabajo.getText().length()==0)||(ImputDescripcionTrabajo.getText().length()==0)||(ImputFechaTrabajo.getText().length()==0)
-                ||(imputClienteTrabajo.getText().length()==0)||(imputEmpleadoTrabajo.getText().length()==0)){
+
+        if ((ImpuTituloTrabajo.getText().length() == 0) || (ImputDescripcionTrabajo.getText().length() == 0) || (ImputFechaTrabajo.getText().length() == 0)
+                || (imputClienteTrabajo.getText().length() == 0) || (imputEmpleadoTrabajo.getText().length() == 0)) {
             JOptionPane.showMessageDialog(null, "ERROR: EXISTEN CAMPOS VACIDOS", "ALERTA", JOptionPane.WARNING_MESSAGE);
-        }else{
+        } else {
             ImpuTituloTrabajo.setText("");
             ImputDescripcionTrabajo.setText("");
-            ImputDuracionTrabajo.setSelectedItem("1");  
+            ImputDuracionTrabajo.setSelectedItem("1");
             imputClienteTrabajo.setText("");
             imputEmpleadoTrabajo.setText("");
             nuevotrabajo.CargarTrabajos(jtClientes);
             CargarTable();
         }
-        
-      
-            if (contadorCliente<10) {
-                longitud=contadorCliente;  
+
+        if (contadorCliente < 10) {
+            longitud = contadorCliente;
         }
-      contadorCliente++;
-     // OcultaObjetos();
-}
-    
-public void CargarTable(){
-        contadorCliente=0;
-        int num=0;
-        String barra=File.separator;
-         String ubicacion=System.getProperty("user.dir")+barra+"Trabajos"+barra;
-        File archivo=new File(ubicacion);
-        FileReader leerArchivo=null;
-        File[]registro=archivo.listFiles();
-        String[]encabezado={"ID","TITULO","DESCRPCION","FECHA","DURACION","CLIENTE","EMPLEADO"};
-            DefaultTableModel  model= new DefaultTableModel(null,encabezado);
-        for (int i=0;i<registro.length;i++){
-            File url=new File(ubicacion+registro[i].getName());
-    
-        try {
-            FileInputStream fis=new FileInputStream(url);
-            Properties mostrar =new Properties();
-            mostrar.load(fis);
-            
-            String filas[]={registro[i].getName().replace(".txt",""),
-            mostrar.getProperty("titulo"),mostrar.getProperty("descripcion"),
-            mostrar.getProperty("fecha"),mostrar.getProperty("duracion"),
-            mostrar.getProperty("cliente"),mostrar.getProperty("empleado")};
-            model.addRow(filas);
-            num=Integer.parseInt (registro[i].getName().replace(".txt",""));
-            fis.close();
-           
-            if(num>contadorCliente){
-             
-            contadorCliente=num;
+        contadorCliente++;
+        // OcultaObjetos();
+    }
+
+    public void CargarTable() {
+        contadorCliente = 0;
+        int num = 0;
+        String barra = File.separator;
+        String ubicacion = System.getProperty("user.dir") + barra + "Trabajos" + barra;
+        File archivo = new File(ubicacion);
+        FileReader leerArchivo = null;
+        File[] registro = archivo.listFiles();
+        String[] encabezado = {"ID", "TITULO", "DESCRPCION", "FECHA", "DURACION", "CLIENTE", "EMPLEADO"};
+        DefaultTableModel model = new DefaultTableModel(null, encabezado);
+        for (int i = 0; i < registro.length; i++) {
+            File url = new File(ubicacion + registro[i].getName());
+
+            try {
+                FileInputStream fis = new FileInputStream(url);
+                Properties mostrar = new Properties();
+                mostrar.load(fis);
+
+                String filas[] = {registro[i].getName().replace(".txt", ""),
+                    mostrar.getProperty("titulo"), mostrar.getProperty("descripcion"),
+                    mostrar.getProperty("fecha"), mostrar.getProperty("duracion"),
+                    mostrar.getProperty("cliente"), mostrar.getProperty("empleado")};
+                model.addRow(filas);
+                num = Integer.parseInt(registro[i].getName().replace(".txt", ""));
+                fis.close();
+
+                if (num > contadorCliente) {
+
+                    contadorCliente = num;
+                }
+            } catch (Exception e) {
+
+            }
+
         }
-        } catch (Exception e) {
-            
-        }
-             
-           
-        }
-        contadorCliente=contadorCliente+1;
+        contadorCliente = contadorCliente + 1;
         jtClientes.setModel(model);
         jtClientes.removeColumn(jtClientes.getColumnModel().getColumn(0));
-         
-          
-          
-        
-      
+
     }
-public  void Eliminar(String nomArchivo){
-         
-        String barra=File.separator;
-        String ubicacion=System.getProperty("user.dir")+barra+"Trabajos"+barra;
-        File archivo2=new File(ubicacion+nomArchivo+".txt");
+
+    public void Eliminar(String nomArchivo) {
+
+        String barra = File.separator;
+        String ubicacion = System.getProperty("user.dir") + barra + "Trabajos" + barra;
+        File archivo2 = new File(ubicacion + nomArchivo + ".txt");
         System.out.println(archivo2);
         if (archivo2.delete()) {
             JOptionPane.showMessageDialog(null, "El archivo se borro correctamente");
-        }else{
-          JOptionPane.showMessageDialog(null, "El archivo no se a eliminado"); 
+        } else {
+            JOptionPane.showMessageDialog(null, "El archivo no se a eliminado");
         }
         CargarTable();
         //LimpiarEntradas();
-        
-}
+
+    }
     TableRowSorter trs;
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -600,7 +597,7 @@ public  void Eliminar(String nomArchivo){
             java.util.logging.Logger.getLogger(Trabajos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -609,7 +606,7 @@ public  void Eliminar(String nomArchivo){
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Trabajos().setVisible(true);
-                
+
             }
         });
     }
@@ -631,6 +628,7 @@ public  void Eliminar(String nomArchivo){
     private javax.swing.JTextField imputEmpleadoTrabajo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private org.jdesktop.swingx.JXDatePicker jDPFecha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

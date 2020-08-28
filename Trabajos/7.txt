@@ -1,0 +1,6 @@
+titulo=Trabajo1
+descripcion=Terminar Proyecto
+fecha=27-08-1984
+duracion=3
+cliente=kris
+empleado=Mario Lopez

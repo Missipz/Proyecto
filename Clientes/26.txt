@@ -1,0 +1,3 @@
+nombre=kristhian
+correo=cris.qs.77@gmail.com
+telefono=6006-1483

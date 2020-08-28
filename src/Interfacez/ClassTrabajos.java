@@ -13,34 +13,33 @@ import javax.swing.JTable;
  *
  * @author Missi
  */
-public class ClassTrabajos 
-{
-     private String titulo;
-     private String  descripcion;
-     private String fecha;
-     private String duracion;
-     private String cliente;
-     private String empleado;
-     private int indice;
-     private String barra=File.separator;
-     private String ubicacion=System.getProperty("user.dir")+barra+"Trabajos"+barra;
-    
+public class ClassTrabajos {
 
-     public  void CargarTrabajos (JTable tabla){
-          
-         String archivo=getIndice()+".txt";
-         File crea_ubicacion =new File(getUbicacion());
-         File crea_archivo =new File(getUbicacion()+archivo); 
-         try {
-         crea_ubicacion.mkdirs();
-         Formatter crea =new Formatter(getUbicacion()+archivo); 
-         System.out.println(crea);
-         crea.format("%s\r\n%s\r\n%s\r\n%s\r\n%s\r\n%s\r\n","titulo="+this.getTitulo(),"descripcion="+this.getDescripcion(),"fecha="+this.getFecha()
-                                                           ,"duracion="+this.getDuracion(),"cliente="+this.getCliente(),"empleado="+this.getEmpleado());
-         crea.close();
-         } catch (Exception e) {
-         }
-}
+    private String titulo;
+    private String descripcion;
+    private String fecha;
+    private String duracion;
+    private String cliente;
+    private String empleado;
+    private int indice;
+    private String barra = File.separator;
+    private String ubicacion = System.getProperty("user.dir") + barra + "Trabajos" + barra;
+
+    public void CargarTrabajos(JTable tabla) {
+
+        String archivo = getIndice() + ".txt";
+        File crea_ubicacion = new File(getUbicacion());
+        File crea_archivo = new File(getUbicacion() + archivo);
+        try {
+            crea_ubicacion.mkdirs();
+            Formatter crea = new Formatter(getUbicacion() + archivo);
+            System.out.println(crea);
+            crea.format("%s\r\n%s\r\n%s\r\n%s\r\n%s\r\n%s\r\n", "titulo=" + this.getTitulo(), "descripcion=" + this.getDescripcion(), "fecha=" + this.getFecha(),
+                     "duracion=" + this.getDuracion(), "cliente=" + this.getCliente(), "empleado=" + this.getEmpleado());
+            crea.close();
+        } catch (Exception e) {
+        }
+    }
 
     /**
      * @return the titulo
@@ -171,7 +170,4 @@ public class ClassTrabajos
     /**
      * @return the nombre
      */
-    
-     
-     
 }

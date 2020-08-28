@@ -1,0 +1,3 @@
+nombre=Heilyn
+correo=heilyn@gmail.com
+telefono=1234-1245

@@ -1,0 +1,6 @@
+titulo=Trabajo1x
+descripcion=Empezar proyecto
+fecha=25-08-1984
+duracion=2
+cliente=kristhian
+empleado=Mario Lopez

@@ -1,0 +1,3 @@
+nombre=Gerardo
+correo=gerardo@gmail.com
+telefono=123455667
