@@ -1,3 +1,0 @@
-nombre=Marlo
-correo=marlon.com
-telefono=0000000

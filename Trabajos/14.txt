@@ -1,6 +1,0 @@
-titulo=101
-descripcion=102
-fecha=106
-duracion=90
-cliente=105
-empleado=1

@@ -1,3 +1,0 @@
-nombre=f
-correo=f
-telefono=f

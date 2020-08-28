@@ -1,6 +1,0 @@
-titulo=x
-descripcion=x
-fecha=x
-duracion=null
-cliente=x
-fecha=x

@@ -1,6 +1,0 @@
-titulo=wwwww
-descripcion=w
-fecha=26-ago-2020  09: 10: 49 PM
-duracion=1
-cliente=w
-empleado=w

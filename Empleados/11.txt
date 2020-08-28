@@ -1,3 +1,0 @@
-nombre=8
-correo=10
-telefono=9

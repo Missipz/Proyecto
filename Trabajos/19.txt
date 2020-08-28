@@ -1,6 +1,0 @@
-titulo=et
-descripcion=rwtwr
-fecha=26-ago-2020  11: 35: 28 PM
-duracion=1
-cliente=ss
-empleado=r

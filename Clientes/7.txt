@@ -1,3 +1,0 @@
-nombre=bbb
-correo=bbb
-telefono=bbb

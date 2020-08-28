@@ -57,7 +57,7 @@ public class Menu extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 340, 140));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 510, 60));
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setFont(new java.awt.Font("Broadway", 1, 18)); // NOI18N
@@ -71,7 +71,7 @@ public class Menu extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 340, 140));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 510, 60));
 
         jButton4.setBackground(new java.awt.Color(0, 0, 0));
         jButton4.setFont(new java.awt.Font("Broadway", 1, 14)); // NOI18N
@@ -85,11 +85,12 @@ public class Menu extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 80, 330, 140));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 510, 60));
 
         jButton5.setBackground(new java.awt.Color(0, 0, 0));
         jButton5.setFont(new java.awt.Font("Broadway", 1, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(0, 204, 204));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/close.png"))); // NOI18N
         jButton5.setText("Salir");
         jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton5.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
@@ -98,7 +99,7 @@ public class Menu extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 240, 330, 140));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 430, 150, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/fondo 1.jpg"))); // NOI18N
         jLabel1.setMaximumSize(null);

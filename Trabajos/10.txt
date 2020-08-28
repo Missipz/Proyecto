@@ -1,6 +1,0 @@
-titulo=xx
-descripcion=xx
-fecha=xx
-duracion=15	
-cliente=xx
-fecha=xx

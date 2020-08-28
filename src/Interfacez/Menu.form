@@ -75,7 +75,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="90" y="80" width="340" height="140"/>
+          <AbsoluteConstraints x="170" y="190" width="510" height="60"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -106,7 +106,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="90" y="240" width="340" height="140"/>
+          <AbsoluteConstraints x="170" y="270" width="510" height="60"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -137,7 +137,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="460" y="80" width="330" height="140"/>
+          <AbsoluteConstraints x="170" y="120" width="510" height="60"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -152,6 +152,9 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="cc" red="0" type="rgb"/>
         </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ICONOS/close.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Salir"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
@@ -165,7 +168,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="460" y="240" width="330" height="140"/>
+          <AbsoluteConstraints x="680" y="430" width="150" height="60"/>
         </Constraint>
       </Constraints>
     </Component>

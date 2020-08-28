@@ -1,3 +1,0 @@
-nombre=Nayery
-correo=123445677
-telefono=nayeri.com

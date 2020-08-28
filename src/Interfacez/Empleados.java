@@ -76,36 +76,36 @@ String nomArchivo="";
                 ImputNombreEmpleadoActionPerformed(evt);
             }
         });
-        getContentPane().add(ImputNombreEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 170, 40));
+        getContentPane().add(ImputNombreEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 150, 40));
 
         ImputCorreoEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImputCorreoEmpleadoActionPerformed(evt);
             }
         });
-        getContentPane().add(ImputCorreoEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 250, 40));
+        getContentPane().add(ImputCorreoEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 150, 40));
 
         ImputTelefonoEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImputTelefonoEmpleadoActionPerformed(evt);
             }
         });
-        getContentPane().add(ImputTelefonoEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 80, 160, 40));
+        getContentPane().add(ImputTelefonoEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 150, 40));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nombre:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Correo");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Telefono");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 50, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, -1, -1));
 
         btnGuardarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/save_32.png"))); // NOI18N
         btnGuardarEmpleado.setText("Guardar");
@@ -119,7 +119,7 @@ String nomArchivo="";
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Buscar");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 210, 80, -1));
 
         jtClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -139,8 +139,9 @@ String nomArchivo="";
         });
         jScrollPane1.setViewportView(jtClientes);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 242, 620, 170));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 242, 570, 170));
 
+        btnEliminaEmpelado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/delete.png"))); // NOI18N
         btnEliminaEmpelado.setText("Eliminar");
         btnEliminaEmpelado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,12 +169,12 @@ String nomArchivo="";
                 imputBuscarEmpleadoKeyTyped(evt);
             }
         });
-        getContentPane().add(imputBuscarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 153, -1));
+        getContentPane().add(imputBuscarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 153, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Modulo de Empleados");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 11, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/close.png"))); // NOI18N
         jButton1.setText("Salir");

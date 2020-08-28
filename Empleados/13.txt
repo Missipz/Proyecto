@@ -1,3 +1,0 @@
-nombre=Karla
-correo=karla.com
-telefono=123

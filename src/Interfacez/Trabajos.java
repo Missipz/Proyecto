@@ -129,49 +129,50 @@ String nomArchivo="";
                 ImpuTituloTrabajoActionPerformed(evt);
             }
         });
-        getContentPane().add(ImpuTituloTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 151, -1));
+        getContentPane().add(ImpuTituloTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 151, -1));
 
         ImputDescripcionTrabajo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImputDescripcionTrabajoActionPerformed(evt);
             }
         });
-        getContentPane().add(ImputDescripcionTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 225, -1));
+        getContentPane().add(ImputDescripcionTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 180, -1));
 
         ImputFechaTrabajo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImputFechaTrabajoActionPerformed(evt);
             }
         });
-        getContentPane().add(ImputFechaTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, 121, -1));
+        getContentPane().add(ImputFechaTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 121, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Titulo");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Descripcion");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Fecha");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 60, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 80, -1, -1));
 
+        btnGuardarTrabajo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/save_32.png"))); // NOI18N
         btnGuardarTrabajo.setText("Guardar Trabajo");
         btnGuardarTrabajo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarTrabajoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnGuardarTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 130, 50));
+        getContentPane().add(btnGuardarTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 160, 50));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Buscar");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 270, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 260, -1, -1));
 
         jtClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -191,15 +192,16 @@ String nomArchivo="";
         });
         jScrollPane1.setViewportView(jtClientes);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 707, 142));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 740, 142));
 
+        btnEliminartrabajo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/delete.png"))); // NOI18N
         btnEliminartrabajo.setText("Eliminar Trabajo");
         btnEliminartrabajo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminartrabajoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEliminartrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 480, 150, 50));
+        getContentPane().add(btnEliminartrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 480, 180, 50));
 
         btnEditarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/icons8-edit-48.png"))); // NOI18N
         btnEditarEmpleado.setText("Editar Trabajo");
@@ -208,7 +210,7 @@ String nomArchivo="";
                 btnEditarEmpleadoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEditarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 480, 160, 50));
+        getContentPane().add(btnEditarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 480, 220, 50));
 
         imputBuscarEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,12 +222,12 @@ String nomArchivo="";
                 imputBuscarEmpleadoKeyTyped(evt);
             }
         });
-        getContentPane().add(imputBuscarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 290, 180, 30));
+        getContentPane().add(imputBuscarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 280, 180, 30));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Modulo de Trabajos");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 640, 50));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 11, 510, 50));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/close.png"))); // NOI18N
         jButton1.setText("Salir");
@@ -234,17 +236,17 @@ String nomArchivo="";
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 480, 140, 50));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 480, 190, 50));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Duracion:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 60, 132, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 80, 132, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Cliente:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, -1));
 
         imputClienteTrabajo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -261,12 +263,12 @@ String nomArchivo="";
                 imputClienteTrabajoKeyTyped(evt);
             }
         });
-        getContentPane().add(imputClienteTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 230, 30));
+        getContentPane().add(imputClienteTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 230, 30));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Empleado a Cargo:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, -1, -1));
 
         imputEmpleadoTrabajo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -286,11 +288,11 @@ String nomArchivo="";
                 imputEmpleadoTrabajoKeyTyped(evt);
             }
         });
-        getContentPane().add(imputEmpleadoTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 225, 30));
+        getContentPane().add(imputEmpleadoTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, 225, 30));
 
         ImputDuracionTrabajo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4\t", "5\t", "6\t", "7\t", "8\t", "9\t", "10", "11\t", "12\t", "13\t", "14\t", "15\t", "16\t", "17\t", "18\t", "19\t", "20", "21\t", "22\t", "23\t", "24\t", "25\t", "26\t", "27\t", "28\t", "29\t", "30", "31\t", "32\t", "33\t", "34\t", "35\t", "36\t", "37\t", "38\t", "39\t", "40", "41\t", "42\t", "43\t", "44\t", "45\t", "46\t", "47\t", "48\t", "49\t", "50", "51\t", "52\t", "53\t", "54\t", "55\t", "56\t", "57\t", "58\t", "59\t", "60", "61\t", "62\t", "63\t", "64\t", "65\t", "66\t", "67\t", "68\t", "69\t", "70", "71\t", "72\t", "73\t", "74\t", "75\t", "76\t", "77\t", "78\t", "79\t", "80", "81\t", "82\t", "83\t", "84", "85\t", "86\t", "87\t", "88\t", "89", "90", " " }));
         ImputDuracionTrabajo.setName("ImputDuracionTrabajo"); // NOI18N
-        getContentPane().add(ImputDuracionTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 80, 80, -1));
+        getContentPane().add(ImputDuracionTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 100, 80, -1));
 
         TableBuscarCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -310,12 +312,12 @@ String nomArchivo="";
         });
         jScrollPane3.setViewportView(TableBuscarCliente);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 480, 60));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 480, 60));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/fondo 1.jpg"))); // NOI18N
         jLabel9.setPreferredSize(new java.awt.Dimension(790, 550));
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 790, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 880, 590));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -1,6 +1,0 @@
-titulo=1
-descripcion=2
-fecha=3
-duracion=4	
-cliente=5
-fecha=6
