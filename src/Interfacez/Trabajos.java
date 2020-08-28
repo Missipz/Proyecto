@@ -14,6 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
@@ -35,8 +36,9 @@ public class Trabajos extends javax.swing.JFrame {
      */
     public Trabajos() {
         initComponents();
+
         CargarTable();
-        CargarFecha();
+        //CargarFecha();
 
     }
 
@@ -57,7 +59,6 @@ public class Trabajos extends javax.swing.JFrame {
         popupMenu1 = new java.awt.PopupMenu();
         ImpuTituloTrabajo = new javax.swing.JTextField();
         ImputDescripcionTrabajo = new javax.swing.JTextField();
-        ImputFechaTrabajo = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -76,10 +77,11 @@ public class Trabajos extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         imputEmpleadoTrabajo = new javax.swing.JTextField();
         ImputDuracionTrabajo = new javax.swing.JComboBox<>();
+        datafecha1 = new com.toedter.calendar.JDateChooser();
         jScrollPane3 = new javax.swing.JScrollPane();
         TableBuscarCliente = new javax.swing.JTable();
-        jDPFecha = new org.jdesktop.swingx.JXDatePicker();
         jLabel9 = new javax.swing.JLabel();
+        ImputFechaTrabajo = new javax.swing.JTextField();
 
         DialogEmpleado.getContentPane().setLayout(new java.awt.GridBagLayout());
 
@@ -131,14 +133,7 @@ public class Trabajos extends javax.swing.JFrame {
                 ImputDescripcionTrabajoActionPerformed(evt);
             }
         });
-        getContentPane().add(ImputDescripcionTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 180, -1));
-
-        ImputFechaTrabajo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ImputFechaTrabajoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ImputFechaTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 121, -1));
+        getContentPane().add(ImputDescripcionTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 290, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -148,12 +143,12 @@ public class Trabajos extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Descripcion");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Fecha");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 80, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, -1, -1));
 
         btnGuardarTrabajo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/save_32.png"))); // NOI18N
         btnGuardarTrabajo.setText("Guardar Trabajo");
@@ -236,7 +231,7 @@ public class Trabajos extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Duracion:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 80, 132, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 130, 132, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -287,7 +282,8 @@ public class Trabajos extends javax.swing.JFrame {
 
         ImputDuracionTrabajo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4\t", "5\t", "6\t", "7\t", "8\t", "9\t", "10", "11\t", "12\t", "13\t", "14\t", "15\t", "16\t", "17\t", "18\t", "19\t", "20", "21\t", "22\t", "23\t", "24\t", "25\t", "26\t", "27\t", "28\t", "29\t", "30", "31\t", "32\t", "33\t", "34\t", "35\t", "36\t", "37\t", "38\t", "39\t", "40", "41\t", "42\t", "43\t", "44\t", "45\t", "46\t", "47\t", "48\t", "49\t", "50", "51\t", "52\t", "53\t", "54\t", "55\t", "56\t", "57\t", "58\t", "59\t", "60", "61\t", "62\t", "63\t", "64\t", "65\t", "66\t", "67\t", "68\t", "69\t", "70", "71\t", "72\t", "73\t", "74\t", "75\t", "76\t", "77\t", "78\t", "79\t", "80", "81\t", "82\t", "83\t", "84", "85\t", "86\t", "87\t", "88\t", "89", "90", " " }));
         ImputDuracionTrabajo.setName("ImputDuracionTrabajo"); // NOI18N
-        getContentPane().add(ImputDuracionTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 100, 80, -1));
+        getContentPane().add(ImputDuracionTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, 80, -1));
+        getContentPane().add(datafecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 100, 140, -1));
 
         TableBuscarCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -308,12 +304,18 @@ public class Trabajos extends javax.swing.JFrame {
         jScrollPane3.setViewportView(TableBuscarCliente);
 
         getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 480, 60));
-        getContentPane().add(jDPFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 50, 120, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/fondo 1.jpg"))); // NOI18N
         jLabel9.setPreferredSize(new java.awt.Dimension(790, 550));
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 880, 590));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 600));
+
+        ImputFechaTrabajo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ImputFechaTrabajoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ImputFechaTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 220, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -359,22 +361,22 @@ public void CargarClientes() {
 
     }
 
-    public Date CargarFecha() {
-        Date objDate = new Date();
-        String strDateFormat = "dd-MMM-yyyy  hh: mm: ss a";
-        SimpleDateFormat objSDF = new SimpleDateFormat(strDateFormat);
-        ImputFechaTrabajo.setText(objSDF.format(objDate));
-        /*Inicio cambio kris*/
-        //jDPFecha.setDate(objDate);
-        /*Fin cambio kris*/
-        return objDate;
-    }
+//    public Date CargarFecha() {
+//        Date objDate = new Date();
+//        String strDateFormat = "dd-MMM-yyyy  hh: mm: ss a";
+//        SimpleDateFormat objSDF = new SimpleDateFormat(strDateFormat);
+//        ImputFechaTrabajo.setText(objSDF.format(objDate).toString());
+//        /*Inicio cambio kris*/
+//        //jDPFecha.setDate(objDate);
+//        /*Fin cambio kris*/
+//        return objDate;
+//    }
     private void jtClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtClientesMouseClicked
         // TODO add your handling code here:
         DefaultTableModel model1 = (DefaultTableModel) jtClientes.getModel();
         nomArchivo = (String) model1.getValueAt(jtClientes.getSelectedRow(), 0);
         ImpuTituloTrabajo.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 1));
-        ImputDescripcionTrabajo.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 2));        
+        ImputDescripcionTrabajo.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 2));
         ImputFechaTrabajo.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 3));
         /*Inicio cambio kris*/
         //jDPFecha.setDate((Date) model1.getValueAt(jtClientes.getSelectedRow(), 3));
@@ -450,9 +452,13 @@ public void CargarClientes() {
     private void TableBuscarClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableBuscarClienteMouseClicked
         DefaultTableModel model1 = (DefaultTableModel) TableBuscarCliente.getModel();
         if (Tabla == "Clientes") {
+
             imputClienteTrabajo.setText((String) model1.getValueAt(TableBuscarCliente.getSelectedRow(), 1));
+
         } else {
+
             imputEmpleadoTrabajo.setText((String) model1.getValueAt(TableBuscarCliente.getSelectedRow(), 1));
+
         }
 
         // TODO add your handling code here:
@@ -470,7 +476,19 @@ public void CargarClientes() {
 
     private void imputEmpleadoTrabajoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imputEmpleadoTrabajoMouseClicked
         Tabla = "Empleados";
-        CargarClientes();        // TODO add your handling code here:
+        CargarClientes();
+
+        //Cambios Esteban Poner fechas 
+        SimpleDateFormat dFormat = new SimpleDateFormat("dd-MM-yyyy hh: mm");
+        
+        String date = dFormat.format(datafecha1.getDate());
+        ImputFechaTrabajo.setText(date);
+
+       
+        
+
+        // FIN Cambios Esteban Poner fechas 
+// TODO add your handling code here:
     }//GEN-LAST:event_imputEmpleadoTrabajoMouseClicked
 
     private void imputClienteTrabajoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imputClienteTrabajoMouseClicked
@@ -611,6 +629,7 @@ public void CargarClientes() {
         });
     }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAgregaEmpleado;
     private javax.swing.JDialog DialogEmpleado;
@@ -623,12 +642,12 @@ public void CargarClientes() {
     private javax.swing.JButton btnEditarEmpleado;
     private javax.swing.JButton btnEliminartrabajo;
     private javax.swing.JButton btnGuardarTrabajo;
+    private com.toedter.calendar.JDateChooser datafecha1;
     private javax.swing.JTextField imputBuscarEmpleado;
     private javax.swing.JTextField imputClienteTrabajo;
     private javax.swing.JTextField imputEmpleadoTrabajo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private org.jdesktop.swingx.JXDatePicker jDPFecha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

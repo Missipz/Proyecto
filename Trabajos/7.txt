@@ -1,6 +1,6 @@
-titulo=Trabajo1
-descripcion=Terminar Proyecto
-fecha=27-08-1984
-duracion=3
-cliente=kris
-empleado=Mario Lopez
+titulo=1233
+descripcion=123
+fecha=07-08-2020 01: 36
+duracion=1
+cliente=123
+empleado=123
