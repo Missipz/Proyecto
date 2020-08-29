@@ -70,23 +70,23 @@ public class Empleados extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ImputNombreEmpleado.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        ImputNombreEmpleado.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         ImputNombreEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImputNombreEmpleadoActionPerformed(evt);
             }
         });
-        getContentPane().add(ImputNombreEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 150, 40));
+        getContentPane().add(ImputNombreEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 170, 40));
 
-        ImputCorreoEmpleado.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        ImputCorreoEmpleado.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         ImputCorreoEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImputCorreoEmpleadoActionPerformed(evt);
             }
         });
-        getContentPane().add(ImputCorreoEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 150, 40));
+        getContentPane().add(ImputCorreoEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 220, 40));
 
-        ImputTelefonoEmpleado.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        ImputTelefonoEmpleado.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         ImputTelefonoEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImputTelefonoEmpleadoActionPerformed(evt);
@@ -161,7 +161,7 @@ public class Empleados extends javax.swing.JFrame {
         });
         getContentPane().add(btnEditarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 450, 150, 50));
 
-        imputBuscarEmpleado.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        imputBuscarEmpleado.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         imputBuscarEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 imputBuscarEmpleadoActionPerformed(evt);

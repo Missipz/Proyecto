@@ -124,6 +124,7 @@ public class Trabajos extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        ImpuTituloTrabajo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ImpuTituloTrabajo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImpuTituloTrabajoActionPerformed(evt);
@@ -131,6 +132,7 @@ public class Trabajos extends javax.swing.JFrame {
         });
         getContentPane().add(ImpuTituloTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 115, 180, 35));
 
+        ImputDescripcionTrabajo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ImputDescripcionTrabajo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImputDescripcionTrabajoActionPerformed(evt);
@@ -205,6 +207,7 @@ public class Trabajos extends javax.swing.JFrame {
         });
         getContentPane().add(btnEditarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 510, 180, 50));
 
+        imputBuscarEmpleado.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         imputBuscarEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 imputBuscarEmpleadoActionPerformed(evt);
@@ -241,6 +244,7 @@ public class Trabajos extends javax.swing.JFrame {
         jLabel5.setText("Cliente:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 180, 50));
 
+        imputClienteTrabajo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         imputClienteTrabajo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 imputClienteTrabajoMouseClicked(evt);
@@ -263,6 +267,7 @@ public class Trabajos extends javax.swing.JFrame {
         jLabel8.setText("Empleado a Cargo:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 180, 50));
 
+        imputEmpleadoTrabajo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         imputEmpleadoTrabajo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 imputEmpleadoTrabajoMouseClicked(evt);
@@ -283,6 +288,7 @@ public class Trabajos extends javax.swing.JFrame {
         });
         getContentPane().add(imputEmpleadoTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 180, 35));
 
+        ImputDuracionTrabajo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ImputDuracionTrabajo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4\t", "5\t", "6\t", "7\t", "8\t", "9\t", "10", "11\t", "12\t", "13\t", "14\t", "15\t", "16\t", "17\t", "18\t", "19\t", "20", "21\t", "22\t", "23\t", "24\t", "25\t", "26\t", "27\t", "28\t", "29\t", "30", "31\t", "32\t", "33\t", "34\t", "35\t", "36\t", "37\t", "38\t", "39\t", "40", "41\t", "42\t", "43\t", "44\t", "45\t", "46\t", "47\t", "48\t", "49\t", "50", "51\t", "52\t", "53\t", "54\t", "55\t", "56\t", "57\t", "58\t", "59\t", "60", "61\t", "62\t", "63\t", "64\t", "65\t", "66\t", "67\t", "68\t", "69\t", "70", "71\t", "72\t", "73\t", "74\t", "75\t", "76\t", "77\t", "78\t", "79\t", "80", "81\t", "82\t", "83\t", "84", "85\t", "86\t", "87\t", "88\t", "89", "90", " " }));
         ImputDuracionTrabajo.setName("ImputDuracionTrabajo"); // NOI18N
         getContentPane().add(ImputDuracionTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 190, 80, 35));

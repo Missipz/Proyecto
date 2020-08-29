@@ -71,41 +71,44 @@ public class Registrar extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        ImputNombreCliente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ImputNombreCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImputNombreClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(ImputNombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 180, 35));
+        getContentPane().add(ImputNombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 230, 35));
 
+        ImputCorreoCliente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ImputCorreoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImputCorreoClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(ImputCorreoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 180, 35));
+        getContentPane().add(ImputCorreoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 230, 35));
 
+        ImputTelefonoCliente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ImputTelefonoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImputTelefonoClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(ImputTelefonoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 180, 35));
+        getContentPane().add(ImputTelefonoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, 180, 35));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nombre:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 180, 50));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 180, 50));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Correo");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 180, 50));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 180, 50));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Telefono");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 180, 50));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 90, 180, 50));
 
         btnGuardarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/save_32.png"))); // NOI18N
         btnGuardarCliente.setText("Guardar");
@@ -159,6 +162,7 @@ public class Registrar extends javax.swing.JFrame {
         });
         getContentPane().add(btnEditarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 450, 150, 50));
 
+        imputBuscarCliente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         imputBuscarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 imputBuscarClienteActionPerformed(evt);
