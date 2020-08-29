@@ -203,11 +203,42 @@ public class Empleados extends javax.swing.JFrame {
         if ((ImputNombreEmpleado.getText().length() == 0) || (ImputCorreoEmpleado.getText().length() == 0) || (ImputTelefonoEmpleado.getText().length() == 0)) {
             JOptionPane.showMessageDialog(null, "ERROR: EXISTEN CAMPOS VACIDOS", "ALERTA", JOptionPane.WARNING_MESSAGE);
         } else {
-            ImputNombreEmpleado.setText("");
+            String correo=ImputCorreoEmpleado.getText();
+        int arroba = 0;
+        boolean punto = false;
+        for (int i = 0; i < correo.length(); i++) {
+                    if (correo.charAt(i) == '@') {
+
+                        arroba++;
+
+                    }
+                    if (correo.charAt(i) == '.') {
+                        punto = true;
+                    }
+                    if (arroba == 1 && punto == true) {
+                        System.out.println("Bingo ");
+                    }
+                    
+                }
+        try{
+            
+           
+        if (correo.length() > 6&&arroba == 1 && punto == true) {
+
+              //sdfdfd 
+              ImputNombreEmpleado.setText("");
             ImputCorreoEmpleado.setText("");
             ImputTelefonoEmpleado.setText("");
             empleado.CargarEmpleados(jtClientes);
             CargarTable();
+            }else{
+            throw new CorreoExcepcion("ERROR: FORMATO DE CORREO INVALIDO ");
+        }
+        }catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null,ex.getMessage());
+
+        }
+            
         }
 
         if (contadorCliente < 10) {

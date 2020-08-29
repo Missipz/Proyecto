@@ -1,0 +1,3 @@
+nombre=Mario Rojas
+correo=3@gf.com
+telefono=654764756

@@ -514,6 +514,7 @@ public void CargarClientes() {
                 || (imputClienteTrabajo.getText().length() == 0) || (imputEmpleadoTrabajo.getText().length() == 0)) {
             JOptionPane.showMessageDialog(null, "ERROR: EXISTEN CAMPOS VACIDOS", "ALERTA", JOptionPane.WARNING_MESSAGE);
         } else {
+            
             ImpuTituloTrabajo.setText("");
             ImputDescripcionTrabajo.setText("");
             ImputDuracionTrabajo.setSelectedItem("1");

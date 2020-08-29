@@ -197,12 +197,44 @@ public class Registrar extends javax.swing.JFrame {
                 contadorCliente);
         if ((ImputNombreCliente.getText().length() == 0) || (ImputCorreoCliente.getText().length() == 0) || (ImputTelefonoCliente.getText().length() == 0)) {
             JOptionPane.showMessageDialog(null, "ERROR: EXISTEN CAMPOS VACIDOS", "ALERTA", JOptionPane.WARNING_MESSAGE);
+        
         } else {
-            ImputNombreCliente.setText("");
+            String correo=ImputCorreoCliente.getText();
+        int arroba = 0;
+        boolean punto = false;
+        for (int i = 0; i < correo.length(); i++) {
+                    if (correo.charAt(i) == '@') {
+
+                        arroba++;
+
+                    }
+                    if (correo.charAt(i) == '.') {
+                        punto = true;
+                    }
+                    if (arroba == 1 && punto == true) {
+                        System.out.println("Bingo ");
+                    }
+                    
+                }
+        try{
+            
+           
+        if (correo.length() > 6&&arroba == 1 && punto == true) {
+
+              //sdfdfd 
+                ImputNombreCliente.setText("");
             ImputCorreoCliente.setText("");
             ImputTelefonoCliente.setText("");
             cliente.CargarEmpleados(jtClientes);
             CargarTable();
+            }else{
+            throw new CorreoExcepcion("ERROR: FORMATO DE CORREO INVALIDO ");
+        }
+        }catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null,ex.getMessage());
+
+        }
+            
         }
 
         if (contadorCliente < 10) {
@@ -282,7 +314,9 @@ public class Registrar extends javax.swing.JFrame {
 
     private void btnGuardarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarClienteActionPerformed
         // TODO add your handling code here:
-        GuardarCliente();
+        GuardarCliente(); 
+        
+        
     }//GEN-LAST:event_btnGuardarClienteActionPerformed
 
     private void btnEliminaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminaClienteActionPerformed

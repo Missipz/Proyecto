@@ -1,0 +1,3 @@
+nombre=Pedro Rojas
+correo=1@gmail.com
+telefono=1213244

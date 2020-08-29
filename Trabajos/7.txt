@@ -1,6 +1,0 @@
-titulo=1233
-descripcion=123
-fecha=07-08-2020 01: 36
-duracion=1
-cliente=123
-empleado=123
