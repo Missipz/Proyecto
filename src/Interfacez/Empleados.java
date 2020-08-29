@@ -204,6 +204,7 @@ public class Empleados extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "ERROR: EXISTEN CAMPOS VACIDOS", "ALERTA", JOptionPane.WARNING_MESSAGE);
         } else {
             String correo=ImputCorreoEmpleado.getText();
+            String telefono=ImputTelefonoEmpleado.getText();
         int arroba = 0;
         boolean punto = false;
         for (int i = 0; i < correo.length(); i++) {
@@ -224,13 +225,17 @@ public class Empleados extends javax.swing.JFrame {
             
            
         if (correo.length() > 6&&arroba == 1 && punto == true) {
-
-              //sdfdfd 
-              ImputNombreEmpleado.setText("");
+                if (telefono.matches("[0-9]+") && telefono.length() == 8) {
+                    ImputNombreEmpleado.setText("");
             ImputCorreoEmpleado.setText("");
             ImputTelefonoEmpleado.setText("");
             empleado.CargarEmpleados(jtClientes);
             CargarTable();
+              }else{
+                 throw new CorreoExcepcion("ERROR: FORMATO DE TELEFONO INVALIDO "); 
+              }
+              //sdfdfd 
+              
             }else{
             throw new CorreoExcepcion("ERROR: FORMATO DE CORREO INVALIDO ");
         }

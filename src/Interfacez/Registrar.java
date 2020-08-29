@@ -200,6 +200,7 @@ public class Registrar extends javax.swing.JFrame {
         
         } else {
             String correo=ImputCorreoCliente.getText();
+            String telefono=ImputTelefonoCliente.getText();
         int arroba = 0;
         boolean punto = false;
         for (int i = 0; i < correo.length(); i++) {
@@ -222,11 +223,16 @@ public class Registrar extends javax.swing.JFrame {
         if (correo.length() > 6&&arroba == 1 && punto == true) {
 
               //sdfdfd 
-                ImputNombreCliente.setText("");
+              if (telefono.matches("[0-9]+") && telefono.length() == 8) {
+                    ImputNombreCliente.setText("");
             ImputCorreoCliente.setText("");
             ImputTelefonoCliente.setText("");
             cliente.CargarEmpleados(jtClientes);
-            CargarTable();
+            CargarTable(); 
+              }else{
+                 throw new CorreoExcepcion("ERROR: FORMATO DE TELEFONO INVALIDO "); 
+              }
+             
             }else{
             throw new CorreoExcepcion("ERROR: FORMATO DE CORREO INVALIDO ");
         }
