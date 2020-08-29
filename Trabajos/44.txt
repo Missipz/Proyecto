@@ -1,6 +1,0 @@
-titulo=Trabajo 5
-descripcion=Hacer tarea
-fecha=05-08-2020 09: 55
-duracion=4	
-cliente=Heilyn
-empleado=Gerardo

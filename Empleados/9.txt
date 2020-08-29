@@ -1,0 +1,3 @@
+nombre=231
+correo=213
+telefono=123

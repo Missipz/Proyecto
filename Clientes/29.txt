@@ -1,3 +1,0 @@
-nombre=Carlos Mora
-correo=2@c.com
-telefono=3523465

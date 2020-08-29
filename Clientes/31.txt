@@ -1,3 +1,0 @@
-nombre=Errol Campos
-correo=3@s
-telefono=65767
