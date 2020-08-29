@@ -1,0 +1,3 @@
+nombre='OTTO CLAUDIO GUEVARA GUTH'
+correo=otto.guevara@gmail.com
+telefono=83846886

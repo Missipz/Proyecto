@@ -1,0 +1,3 @@
+nombre='ANGEL FRANCISCO DEL CARMEN TREJOS HERRERA' 
+correo=g.negociosintel.cr@hotmail.com
+telefono=22495273

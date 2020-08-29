@@ -1,0 +1,3 @@
+nombre='EDWARD JESUS MARIN UGALDE'
+correo=jesusmarinugalde92@gmail.com
+telefono=88983068

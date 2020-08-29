@@ -1,0 +1,3 @@
+nombre='ROBERTO BELARMINO BENAVIDES LORIA' 
+correo=cedral@gmail.com
+telefono=86633857
