@@ -26,6 +26,7 @@ import javax.swing.table.TableRowSorter;
 public class Trabajos extends javax.swing.JFrame {
 
     int contadorCliente = 0;
+    int contadorCliente1 = 0;
     int longitud = 10;
     String Tabla;
     String fecha;
@@ -331,13 +332,20 @@ public class Trabajos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-   public void LimpiarTablas(){
+   public void LimpiarCampos(){
+       ImpuTituloTrabajo.setText("");
+            ImputDescripcionTrabajo.setText("");
+            ImputDuracionTrabajo.setSelectedItem("1");
+            imputClienteTrabajo.setText("");
+            imputEmpleadoTrabajo.setText("");
+   }
+    public void LimpiarTablas(){
        String[] encabezado = {""};
          DefaultTableModel model = new DefaultTableModel(null, encabezado);
         TableBuscarCliente.setModel(model);
    } 
     public void CargarClientes() {
-        contadorCliente = 0;
+        contadorCliente1 = 0;
         int num = 0;
         String barra = File.separator;
         String ubicacion = System.getProperty("user.dir") + barra + Tabla + barra;
@@ -450,6 +458,7 @@ public class Trabajos extends javax.swing.JFrame {
         int codigo = JOptionPane.showConfirmDialog(null, "Deseas eliminar el Empleado: " + ImpuTituloTrabajo.getText(), "Atencion", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE);
         if (codigo == JOptionPane.YES_OPTION) {
             Eliminar(nomArchivo);
+            LimpiarCampos();
             //btnEliminarUsuario.setVisible(false);
         }
     }//GEN-LAST:event_btnEliminartrabajoActionPerformed
@@ -536,11 +545,7 @@ public class Trabajos extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "ERROR: EXISTEN CAMPOS VACIDOS", "ALERTA", JOptionPane.WARNING_MESSAGE);
         } else {
             
-            ImpuTituloTrabajo.setText("");
-            ImputDescripcionTrabajo.setText("");
-            ImputDuracionTrabajo.setSelectedItem("1");
-            imputClienteTrabajo.setText("");
-            imputEmpleadoTrabajo.setText("");
+            LimpiarCampos();
             nuevotrabajo.CargarTrabajos(jtClientes);
             CargarTable();
         }

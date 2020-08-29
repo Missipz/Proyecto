@@ -1,3 +1,0 @@
-nombre='GABRIEL ANGEL FONSECA CAMACHO'
-correo=gfonsecacamacho@gmail.com
-telefono=26478106

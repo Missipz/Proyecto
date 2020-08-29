@@ -1,3 +1,0 @@
-nombre='GERARDO ANDRES DEL SOCORRO FONSECA MATA'
-correo=andresfonsecamata@gmail.com
-telefono=26478087

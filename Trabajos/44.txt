@@ -1,0 +1,6 @@
+titulo=Hp g5
+descripcion=Limpieza general
+fecha=07-08-2020 12: 34
+duracion=1
+cliente=kristhian
+empleado='RAUL ANTONIO DE LA TRINIDAD VENEGAS PORRAS'

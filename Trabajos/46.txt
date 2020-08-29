@@ -1,0 +1,6 @@
+titulo=Pantalla Viera
+descripcion=Cambiar conector
+fecha=07-08-2020 12: 34
+duracion=3
+cliente='GABRIEL ANGEL FONSECA CAMACHO'
+empleado='RAUL ANTONIO DE LA TRINIDAD VENEGAS PORRAS'

@@ -196,7 +196,11 @@ public class Empleados extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+ public void LimpiarCampos(){
+        ImputNombreEmpleado.setText("");
+            ImputCorreoEmpleado.setText("");
+            ImputTelefonoEmpleado.setText("");
+   }
     public void GuardarCliente() {
 
         ClassGuardarEmpleadosClientes empleado = new ClassGuardarEmpleadosClientes("", "", "", "", "", "", "Empleados",
@@ -230,9 +234,7 @@ public class Empleados extends javax.swing.JFrame {
            
         if (correo.length() > 6&&arroba == 1 && punto == true) {
                 if (telefono.matches("[0-9]+") && telefono.length() == 8) {
-                    ImputNombreEmpleado.setText("");
-            ImputCorreoEmpleado.setText("");
-            ImputTelefonoEmpleado.setText("");
+                    LimpiarCampos();
             empleado.CargarEmpleados(jtClientes);
             CargarTable();
               }else{
@@ -335,6 +337,7 @@ public class Empleados extends javax.swing.JFrame {
         int codigo = JOptionPane.showConfirmDialog(null, "Deseas eliminar el Empleado: " + ImputNombreEmpleado.getText(), "Atencion", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE);
         if (codigo == JOptionPane.YES_OPTION) {
             Eliminar(nomArchivo);
+            LimpiarCampos();
             //btnEliminarUsuario.setVisible(false);
         }
     }//GEN-LAST:event_btnEliminaEmpeladoActionPerformed

@@ -193,6 +193,11 @@ public class Registrar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+     public void LimpiarCampos(){
+        ImputNombreCliente.setText("");
+            ImputCorreoCliente.setText("");
+            ImputTelefonoCliente.setText("");
+   }
     public void GuardarCliente() {
 
         ClassGuardarEmpleadosClientes cliente = new ClassGuardarEmpleadosClientes("", "", "", "", "", "", "Clientes",
@@ -229,9 +234,7 @@ public class Registrar extends javax.swing.JFrame {
 
               //sdfdfd 
               if (telefono.matches("[0-9]+") && telefono.length() == 8) {
-                    ImputNombreCliente.setText("");
-            ImputCorreoCliente.setText("");
-            ImputTelefonoCliente.setText("");
+                   LimpiarCampos();
             cliente.CargarEmpleados(jtClientes);
             CargarTable(); 
               }else{
@@ -335,6 +338,7 @@ public class Registrar extends javax.swing.JFrame {
         int codigo = JOptionPane.showConfirmDialog(null, "Deseas eliminar el Usuario: " + ImputNombreCliente.getText(), "Atencion", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE);
         if (codigo == JOptionPane.YES_OPTION) {
             Eliminar(nomArchivo);
+            LimpiarCampos();
             //btnEliminarUsuario.setVisible(false);
         }
     }//GEN-LAST:event_btnEliminaClienteActionPerformed
