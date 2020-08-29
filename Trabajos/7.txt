@@ -1,0 +1,6 @@
+titulo=f
+descripcion=f
+fecha=06-08-2020 12: 00
+duracion=1
+cliente=af
+empleado=Mario Lopez

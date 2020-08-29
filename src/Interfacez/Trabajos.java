@@ -80,8 +80,10 @@ public class Trabajos extends javax.swing.JFrame {
         datafecha1 = new com.toedter.calendar.JDateChooser();
         jScrollPane3 = new javax.swing.JScrollPane();
         TableBuscarCliente = new javax.swing.JTable();
-        jLabel9 = new javax.swing.JLabel();
         ImputFechaTrabajo = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         DialogEmpleado.getContentPane().setLayout(new java.awt.GridBagLayout());
 
@@ -115,7 +117,7 @@ public class Trabajos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
-        setLocation(new java.awt.Point(270, 80));
+        setLocation(new java.awt.Point(230, 80));
         setName("JframeEmpleado"); // NOI18N
         setUndecorated(true);
         setResizable(false);
@@ -147,7 +149,7 @@ public class Trabajos extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Fecha");
+        jLabel4.setText("Fecha de inicio");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, -1, -1));
 
         btnGuardarTrabajo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/save_32.png"))); // NOI18N
@@ -162,7 +164,7 @@ public class Trabajos extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Buscar");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 260, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 280, -1, -1));
 
         jtClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -230,8 +232,8 @@ public class Trabajos extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Duracion:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 130, 132, -1));
+        jLabel2.setText("Dias");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 160, 80, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -305,21 +307,36 @@ public class Trabajos extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 480, 60));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/fondo 1.jpg"))); // NOI18N
-        jLabel9.setPreferredSize(new java.awt.Dimension(790, 550));
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 600));
-
         ImputFechaTrabajo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImputFechaTrabajoActionPerformed(evt);
             }
         });
-        getContentPane().add(ImputFechaTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 220, -1));
+        getContentPane().add(ImputFechaTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 100, 100, -1));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Duracion:");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 130, 132, -1));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/fondo 1.jpg"))); // NOI18N
+        jLabel9.setPreferredSize(new java.awt.Dimension(790, 550));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 600));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Duracion:");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 130, 132, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-public void CargarClientes() {
+   public void LimpiarTablas(){
+       String[] encabezado = {""};
+         DefaultTableModel model = new DefaultTableModel(null, encabezado);
+        TableBuscarCliente.setModel(model);
+   } 
+    public void CargarClientes() {
         contadorCliente = 0;
         int num = 0;
         String barra = File.separator;
@@ -384,12 +401,20 @@ public void CargarClientes() {
         ImputDuracionTrabajo.setSelectedItem((String) model1.getValueAt(jtClientes.getSelectedRow(), 4));
         imputClienteTrabajo.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 5));
         imputEmpleadoTrabajo.setText((String) model1.getValueAt(jtClientes.getSelectedRow(), 6));
-
+         try {
+      String fecha =ImputFechaTrabajo.getText();
+      SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy hh: mm");
+      Date fechaDate = formato.parse(fecha);
+      datafecha1.setDate(fechaDate);
+      } catch (Exception ex) {
+       
+      }  
     }//GEN-LAST:event_jtClientesMouseClicked
 
     private void btnGuardarTrabajoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarTrabajoActionPerformed
         // TODO add your handling code here:
         GuardarCliente();
+        LimpiarTablas();
     }//GEN-LAST:event_btnGuardarTrabajoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -413,6 +438,7 @@ public void CargarClientes() {
         // TODO add your handling code here:
         contadorCliente = Integer.parseInt(nomArchivo);
         GuardarCliente();
+         LimpiarTablas();
     }//GEN-LAST:event_btnEditarEmpleadoActionPerformed
 
     private void ImpuTituloTrabajoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImpuTituloTrabajoActionPerformed
@@ -477,18 +503,8 @@ public void CargarClientes() {
     private void imputEmpleadoTrabajoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imputEmpleadoTrabajoMouseClicked
         Tabla = "Empleados";
         CargarClientes();
-
-        //Cambios Esteban Poner fechas 
-        SimpleDateFormat dFormat = new SimpleDateFormat("dd-MM-yyyy hh: mm");
         
-        String date = dFormat.format(datafecha1.getDate());
-        ImputFechaTrabajo.setText(date);
-
-       
         
-
-        // FIN Cambios Esteban Poner fechas 
-// TODO add your handling code here:
     }//GEN-LAST:event_imputEmpleadoTrabajoMouseClicked
 
     private void imputClienteTrabajoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imputClienteTrabajoMouseClicked
@@ -497,7 +513,12 @@ public void CargarClientes() {
     }//GEN-LAST:event_imputClienteTrabajoMouseClicked
 
     public void GuardarCliente() {
-
+            //Cambios Esteban Poner fechas 
+        SimpleDateFormat dFormat = new SimpleDateFormat("dd-MM-yyyy hh: mm");
+        String date = dFormat.format(datafecha1.getDate());
+        ImputFechaTrabajo.setText(date);
+        // FIN Cambios Esteban Poner fechas 
+// TODO add your handling code here:
         ClassTrabajos nuevotrabajo = new ClassTrabajos();
         nuevotrabajo.setTitulo(ImpuTituloTrabajo.getText());
         nuevotrabajo.setDescripcion(ImputDescripcionTrabajo.getText());
@@ -650,6 +671,8 @@ public void CargarClientes() {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

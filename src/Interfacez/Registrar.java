@@ -66,7 +66,7 @@ public class Registrar extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 153));
-        setLocation(new java.awt.Point(300, 80));
+        setLocation(new java.awt.Point(290, 80));
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -76,29 +76,29 @@ public class Registrar extends javax.swing.JFrame {
                 ImputNombreClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(ImputNombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 130, -1));
+        getContentPane().add(ImputNombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 130, -1));
 
         ImputCorreoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImputCorreoClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(ImputCorreoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 157, -1));
+        getContentPane().add(ImputCorreoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 157, -1));
 
         ImputTelefonoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImputTelefonoClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(ImputTelefonoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, 153, -1));
+        getContentPane().add(ImputTelefonoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 140, 153, -1));
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nombre:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, -1));
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Correo");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, -1, -1));
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Telefono");
@@ -111,12 +111,12 @@ public class Registrar extends javax.swing.JFrame {
                 btnGuardarClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(btnGuardarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 180, 50));
+        getContentPane().add(btnGuardarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, 180, 50));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Buscar");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, -1, -1));
 
         jtClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -136,7 +136,7 @@ public class Registrar extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jtClientes);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 540, 170));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 540, 170));
 
         btnEliminaCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/delete.png"))); // NOI18N
         btnEliminaCliente.setText("Eliminar");
@@ -145,7 +145,7 @@ public class Registrar extends javax.swing.JFrame {
                 btnEliminaClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEliminaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 190, 50));
+        getContentPane().add(btnEliminaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, 190, 50));
 
         btnEditarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/icons8-edit-48.png"))); // NOI18N
         btnEditarCliente.setText("Editar ");
@@ -154,7 +154,7 @@ public class Registrar extends javax.swing.JFrame {
                 btnEditarClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEditarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, 140, 50));
+        getContentPane().add(btnEditarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 460, 140, 50));
 
         imputBuscarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,12 +166,12 @@ public class Registrar extends javax.swing.JFrame {
                 imputBuscarClienteKeyTyped(evt);
             }
         });
-        getContentPane().add(imputBuscarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 210, 153, -1));
+        getContentPane().add(imputBuscarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 210, 153, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("REGISTRO DE CLIENTES ");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 11, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/close.png"))); // NOI18N
         jButton1.setText("Salir");
@@ -180,10 +180,10 @@ public class Registrar extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 460, 130, 50));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 460, 130, 50));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/fondo 1.jpg"))); // NOI18N
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 510));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
